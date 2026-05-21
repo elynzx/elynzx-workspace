@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import "tailwindcss";
+@import "./utilities.css";
+@import "./animation.css";
+@custom-variant dark (&: where(.dark, .dark *));
+
+@theme {
+  --font-body: "Karla", sans-serif;
+  --font-title: "Source Code Pro", monospace;
+
+  /*Base*/
+  --color-bgDeepBlack: #222222;
+  --color-bgDarkPink: #e8b9c3;
+
+  --color-lightGray: #9e9e9e;
+  --color-bgLightGray: #fafafa;
+  --color-DeepGray: #3b3b3b;
+
+  --color-darkPink: #f2bdd3;
+  --color-LineDarkPink: #ffc9de;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color-scheme: light dark;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-light-gray);
+  font-size: 0.6rem;
+}
+
+button {
+  cursor: pointer;
+}
