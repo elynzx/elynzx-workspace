@@ -31,7 +31,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--font-body);
-  background-color: var(--color-bg-light-gray);
   font-size: 0.6rem;
 }
 
