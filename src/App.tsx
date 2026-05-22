@@ -1,5 +1,7 @@
+import { DisplayLayout } from "./shared/layout/DisplayLayout.tsx";
+
 function App() {
-  return <div>Hola</div>;
+  return <DisplayLayout />;
 }
 
 export default App;
