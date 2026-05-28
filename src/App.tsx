@@ -1,4 +1,4 @@
-import { DisplayLayout } from "./shared/layout/DisplayLayout.tsx";
+import { DisplayLayout } from "./shared/layout/displayLayout.tsx";
 
 function App() {
   return <DisplayLayout />;

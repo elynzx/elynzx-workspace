@@ -1,4 +1,4 @@
-import { useContactForm } from "../hooks/useContactForm";
+import { useContactForm } from "../hooks/useContactModal";
 
 interface Props {
   closeDropdown: () => void;
