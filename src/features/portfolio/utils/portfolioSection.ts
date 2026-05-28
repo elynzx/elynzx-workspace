@@ -1,0 +1,1 @@
+export type portfolioSection = "home" | "skills" | "projects" | "contact";
