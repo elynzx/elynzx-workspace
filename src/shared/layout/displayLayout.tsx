@@ -1,4 +1,4 @@
-import { IdCard } from "../../features/id-card/IdCard";
+import { IdCard } from "../../features/idCard/IdCard";
 import { Portfolio } from "../../features/portfolio/Portfolio";
 import { useWorkspaceStore } from "../../store/useWorkspaceStore";
 import { Background } from "../components/Background/Background";
