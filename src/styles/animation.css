@@ -1,9 +1,47 @@
 @layer utilities {
     /* Keyframes */
 
+    @keyframes galaxyPulse {
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+
+    @keyframes twinkle {
+        0%,
+        100% {
+            opacity: 0.2;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+
     /* Utility classes */
 
-    @media (min-width: 768px) {
+    .animate-galaxy {
+        background:
+            radial-gradient(circle at 15% 15%, #b47693 4%, transparent 6%),
+            radial-gradient(circle at 50% 12%, #ac7691 2%, transparent 12%),
+            radial-gradient(circle at 18% 55%, #c26691 0%, transparent 10%),
+            radial-gradient(circle at 48% 45%, #ffffff 0%, transparent 8%),
+            radial-gradient(circle at 28% 45%, #ffffff 0%, transparent 6%),
+            radial-gradient(circle at 48% 52%, #9b4f72 4%, transparent 18%),
+            #c283a6;
 
+        background-size: 150% 150%;
+        animation: galaxyPulse 10s ease-in-out infinite;
+    }
+
+    .animate-twinkle {
+        animation: twinkle var(--star-duration, 3s) ease-in-out infinite;
     }
 }
