@@ -19,8 +19,8 @@ export const PortfolioHeader = ({
       onTouchStart={onTouchStart}
       className={`w-full h-14 flex items-center justify-between px-6 bg-black/20 border-b border-white/40 shrink-0 select-none ${
         isDragging
-          ? "cursor-grabbing"
-          : "md:cursor-grab md:active:cursor-grabbing"
+          ? "cursor-crosshair"
+          : "md:cursor-crosshair md:active:cursor-grabbing"
       }`}
     >
       <div className="flex items-center gap-3 text-white pointer-events-none">

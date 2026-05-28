@@ -8,6 +8,7 @@ import {
 import ProfilePhoto from "../../assets/ProfilePhoto/Profile_02.png";
 import PaperClip from "../../assets/stickers/paperClip.png";
 import { useDraggable } from "../../shared/hooks/useDraggable";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const idData = {
   season: "TERM 08",
@@ -27,20 +28,19 @@ const idData = {
 };
 
 export const IdCard = () => {
-  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
-    useDraggable();
+  const initialX = window.innerWidth > 768 ? window.innerWidth * 0.64 : 40;
+  const initialY = window.innerWidth > 768 ? window.innerHeight * 0.22 : 80;
 
-  const dragStyles = isDragging
-    ? "shadow-[0_30px_70px_rgba(244,63,94,0.3)] scale-[1.01] "
-    : "top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 ";
+  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
+    useDraggable({ x: initialX, y: initialY });
 
   return (
     <div
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       style={window.innerWidth > 768 ? positionStyle : undefined}
-      className={`cursor-crosshair absolute z-40 rotate-1 md:rotate-3 text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-85 md:max-w-lg py-4 md:py-6 px-4 md:px-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col overflow-hidden pointer-events-auto select-none transition-shadow duration-150 ${
-        isDragging ? "" : dragStyles
+      className={`cursor-crosshair absolute z-40 text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-85 md:max-w-lg py-4 md:py-6 px-4 md:px-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col overflow-hidden pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
+        isDragging ? "shadow-[0_30px_70px_rgba(244,63,94,0.3)]" : ""
       }`}
     >
       <div className="flex flex-col items-center w-full gap-1.5 mb-2.5 md:mb-4">
@@ -54,7 +54,7 @@ export const IdCard = () => {
             />
             <p>{idData.season}</p>
           </div>
-          <div className="flex items-center gap-1 text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded-md border border-sky-100 font-bold">
+          <div className="flex items-center gap-1 text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded-md border border-sky-100 font-bold animate-pulse">
             <span>{idData.greeting}</span>
           </div>
         </div>
@@ -120,21 +120,21 @@ export const IdCard = () => {
               href="/Evelyn_Pascual_Resume.pdf"
               download="Evelyn_Pascual_Resume.pdf"
               className="flex-1 bg-pink-400/90 hover:bg-pink-400 text-white 
-              font-black text-sm rounded-full py-3 flex items-center justify-center gap-1.5 cursor-pointer"
+              font-black text-sm rounded-2xl py-3 flex items-center justify-center gap-1.5 cursor-pointer animate-pulse"
               onClick={(e) => e.stopPropagation()}
               title="Download Evelyn Pascual Resume PDF"
             >
               <DownloadSimpleIcon size={16} weight="bold" />
               <span>Resume</span>
             </a>
-            <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-center items-center gap-2">
               <a
                 href={idData.socials.github}
                 target="_blank"
                 rel="noreferrer"
                 className="p-2 bg-gray-50 border border-pink-100 rounded-xl text-gray-400 hover:text-pink-400 transition-all shadow-2xs"
               >
-                <GithubLogoIcon size={16} weight="fill" />
+                <FaGithub className="text-lg md:text-xl" />
               </a>
               <a
                 href={idData.socials.linkedin}
@@ -142,7 +142,7 @@ export const IdCard = () => {
                 rel="noreferrer"
                 className="p-2 bg-gray-50 border border-sky-100 rounded-xl text-gray-400 hover:text-sky-400 transition-all shadow-2xs"
               >
-                <LinkedinLogoIcon size={16} weight="fill" />
+                <FaLinkedin className="text-lg md:text-xl" />
               </a>
             </div>
           </div>

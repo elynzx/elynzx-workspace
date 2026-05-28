@@ -10,26 +10,20 @@ import { useDraggable } from "../../shared/hooks/useDraggable";
 
 export const Portfolio = () => {
   const { isPortfolioOpen, togglePortfolio } = useWorkspaceStore();
-  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
-    useDraggable();
+  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } = useDraggable();
   const [activeTab, setActiveTab] = useState<portfolioSection>("home");
 
   if (!isPortfolioOpen) return null;
   const isProjectsTab = activeTab === "projects";
 
-  const desktopDragStyles = isDragging
-    ? "md:shadow-[0_55px_110px_rgba(20,10,40,0.4)] md:scale-[1.001]"
-    : "md:top-1/2 md:left-1/2 md:-translate-y-1/2 md:-translate-x-1/2";
-
   return (
     <div
-      style={window.innerWidth > 768 && isDragging ? positionStyle : undefined}
+      style={window.innerWidth > 768 ? positionStyle : undefined}
       className={`
         fixed z-30 flex flex-col overflow-hidden pointer-events-auto select-none
         bg-linear-to-b from-transparent to-black/30 backdrop-blur-3xl border-white/20
-        w-[92%] left-1/2 -translate-x-1/2 max-w-full
-        top-16 bottom-24 rounded-2xl border-2 md:absolute md:w-[92%] md:max-w-7xl md:h-175 md:bottom-auto md:right-auto 
-    ${isDragging ? "" : desktopDragStyles}
+        w-[92%] max-w-full rounded-2xl border-2 md:absolute md:w-[92%] md:max-w-7xl md:h-175 md:bottom-auto md:right-auto transition-shadow duration-150
+        ${isDragging ? "md:shadow-[0_55px_110px_rgba(20,10,40,0.4)] md:scale-[1.001]" : ""}
       `}
     >
       <PortfolioHeader
