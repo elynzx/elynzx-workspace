@@ -10,14 +10,14 @@ interface Props {
 export const DockItem = ({ label, Icon, isActive, onToggle }: Props) => {
   const buttonStyle = isActive
     ? "bg-pink-400 text-white shadow-lg border border-white/10"
-    : "bg-white/40 text-white hover:bg-[#F69BC3] hover:text-white";
+    : "bg-white/10 text-white hover:bg-[#F69BC3] hover:text-white";
 
   return (
     <button
       onClick={onToggle}
       className="relative group flex flex-col items-center focus:outline-none"
     >
-      <div className={`p-2 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 transform md:group-hover:-translate-y-2 text-xl md:text-2xl ${buttonStyle}`}>
+      <div className={`p-2 md:p-3 rounded-xl transition-all duration-300 transform md:group-hover:-translate-y-2 text-xl md:text-2xl ${buttonStyle}`}>
         <Icon size={24} weight="fill" />
       </div>
 

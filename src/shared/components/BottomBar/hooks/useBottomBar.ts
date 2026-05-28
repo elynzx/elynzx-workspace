@@ -1,10 +1,11 @@
-import { useWorkspaceStore } from "../../../../store/useWorkspaceStore";
-import { 
-  IdentificationCardIcon, 
-  FolderOpenIcon, 
-  MusicNotesIcon, 
-  CheckSquareIcon 
+
+import {
+  IdentificationCardIcon,
+  FolderOpenIcon,
+  MusicNotesIcon,
+  CheckSquareIcon,
 } from "@phosphor-icons/react";
+import { useWorkspaceStore } from "../../../../store/useWorkspaceStore";
 
 export function useBottomBar() {
   const store = useWorkspaceStore();
