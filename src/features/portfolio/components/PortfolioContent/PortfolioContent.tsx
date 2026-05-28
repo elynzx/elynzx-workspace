@@ -1,5 +1,5 @@
 import type { portfolioSection } from "../../utils/portfolioSection";
-import { ContactView } from "../ContactView/contact-view";
+import { ContactView } from "../ContactView/ContactView";
 import { SkillsView, ProjectsView, HomeView } from "../index";
 
 interface PortfolioContentProps {
