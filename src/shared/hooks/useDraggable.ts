@@ -1,9 +1,28 @@
 import { useState, useEffect, useRef } from "react";
 
-export function useDraggable() {
-  const [position, setPosition] = useState({ x: 40, y: 80 });
-  const [isDragging, setIsDragging] = useState(false);
+interface Position {
+  x: number;
+  y: number;
+}
 
+export function useDraggable(initialPosition?: Position) {
+  const [position, setPosition] = useState<Position>(() => {
+    if (initialPosition) return initialPosition;
+
+    if (window.innerWidth > 768) {
+      const modalWidth = Math.min(window.innerWidth * 0.92, 1280);
+      const modalHeight = 775;
+
+      return {
+        x: (window.innerWidth - modalWidth) / 2,
+        y: (window.innerHeight - modalHeight) / 2 - 30,
+      };
+    }
+
+    return { x: 0, y: 0 };
+  });
+
+  const [isDragging, setIsDragging] = useState(false);
   const cursorStartPosition = useRef({ x: 0, y: 0 });
   const elementStartPosition = useRef({ x: 0, y: 0 });
 
@@ -20,7 +39,7 @@ export function useDraggable() {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (window.innerWidth <= 768) return; 
+    if (window.innerWidth <= 768) return;
     setIsDragging(true);
     const touch = e.touches[0];
     captureStartCoordinates(touch.clientX, touch.clientY);
@@ -28,12 +47,13 @@ export function useDraggable() {
 
   useEffect(() => {
     const calculateNextPosition = (clientX: number, clientY: number) => {
-      const horizontalDistance = clientX - cursorStartPosition.current.x;
-      const verticalDistance = clientY - cursorStartPosition.current.y;
-
       setPosition({
-        x: elementStartPosition.current.x + horizontalDistance,
-        y: elementStartPosition.current.y + verticalDistance,
+        x:
+          elementStartPosition.current.x +
+          (clientX - cursorStartPosition.current.x),
+        y:
+          elementStartPosition.current.y +
+          (clientY - cursorStartPosition.current.y),
       });
     };
 
