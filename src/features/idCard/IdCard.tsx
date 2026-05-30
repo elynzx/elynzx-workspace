@@ -9,6 +9,7 @@ import ProfilePhoto from "../../assets/ProfilePhoto/Profile_02.png";
 import PaperClip from "../../assets/stickers/paperClip.png";
 import { useDraggable } from "../../shared/hooks/useDraggable";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useWorkspaceStore } from "../../store/useWorkspaceStore";
 
 const idData = {
   season: "TERM 08",
@@ -21,13 +22,16 @@ const idData = {
   },
   details: [
     { label: "Engineer", value: "Evelyn Pascual" },
-    { label: "Tech Stack", value: "React • Spring • Python" },
+    { label: "Tech Stack", value: "React • SpringBoot • Python" },
     { label: "Execution", value: "Full SDLC Ownership", hideOnMobile: true },
     { label: "Objective", value: "Seeking Internship", isOnline: true },
   ],
 };
 
 export const IdCard = () => {
+  const activeApp = useWorkspaceStore((state) => state.activeApp);
+  const focusApp = useWorkspaceStore((state) => state.focusApp);
+  const zIndex = activeApp === "IdCard" ? "z-50" : "z-10";
   const initialX = window.innerWidth > 768 ? window.innerWidth * 0.64 : 40;
   const initialY = window.innerWidth > 768 ? window.innerHeight * 0.22 : 80;
 
@@ -36,10 +40,11 @@ export const IdCard = () => {
 
   return (
     <div
+      onClick={() => focusApp("IdCard")}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       style={window.innerWidth > 768 ? positionStyle : undefined}
-      className={`cursor-crosshair absolute z-40 text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-85 md:max-w-lg py-4 md:py-6 px-4 md:px-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col overflow-hidden pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
+      className={`${zIndex} cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-85 md:max-w-lg py-4 md:py-6 px-4 md:px-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col overflow-hidden pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
         isDragging ? "shadow-[0_30px_70px_rgba(244,63,94,0.3)]" : ""
       }`}
     >
