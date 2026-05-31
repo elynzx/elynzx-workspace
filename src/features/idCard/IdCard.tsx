@@ -78,7 +78,7 @@ export const IdCard = () => {
           <img
             src={PaperClip}
             alt=""
-            className="absolute -top-3 -right-4 w-10 md:w-14 pointer-events-none drop-shadow-xs select-none"
+            className="absolute -top-3 -right-4 w-10 md:w-17 pointer-events-none drop-shadow-md select-none animate-bounce"
           />
         </div>
 
@@ -88,7 +88,7 @@ export const IdCard = () => {
               <SparkleIcon
                 size={12}
                 weight="fill"
-                className="text-pink-400 animate-bounce"
+                className="text-pink-400 animate-pulse"
               />
               <p className="text-pink-400 font-black tracking-tight text-[11px] md:text-[13px] uppercase font-code truncate">
                 {idData.role}

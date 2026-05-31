@@ -18,15 +18,15 @@ const METRICS_DATA: MetricItem[] = [
   {
     id: "01",
     theme: "pink",
-    icon: <CompassIcon size={14} weight="bold" />,
+    icon: <CompassIcon size={17} weight="bold" />,
     category: "methodology",
-    title: "100% From-Scratch Owner",
-    desc: "Blueprint planning & modular builds.",
+    title: "Ground-Up Development",
+    desc: "Blueprint planning & modular development.",
   },
   {
     id: "02",
     theme: "sky",
-    icon: <MedalIcon size={14} weight="bold" />,
+    icon: <MedalIcon size={17} weight="bold" />,
     category: "academic",
     title: "Top 10% Class Rank",
     desc: "Systems Engineering student at UTP.",
@@ -34,15 +34,15 @@ const METRICS_DATA: MetricItem[] = [
   {
     id: "03",
     theme: "pink",
-    icon: <CodeIcon size={14} weight="bold" />,
+    icon: <CodeIcon size={17} weight="bold" />, 
     category: "community",
-    title: "IEEE WIE Core Volunteer",
-    desc: "Leading with empathy & teamwork.",
+    title: "IEEE WIE Volunteer",
+    desc: "Fostering STEM & collaborative teamwork.",
   },
   {
     id: "04",
     theme: "sky",
-    icon: <GlobeHemisphereWestIcon size={14} weight="bold" />,
+    icon: <GlobeHemisphereWestIcon size={17} weight="bold" />,
     category: "language",
     title: "English B2 Certified",
     desc: "Global workspace ready.",
@@ -81,7 +81,7 @@ export const MetricGrid = () => {
                 >
                   {tile.title}
                 </span>
-                <p className="text-[11px] md:text-[12px] text-white/60 font-medium truncate">
+                <p className="text-[11px] md:text-[13px] text-white/60 font-medium truncate">
                   {tile.desc}
                 </p>
               </div>
@@ -89,7 +89,7 @@ export const MetricGrid = () => {
 
             <div
               className={`
-                font-code text-[8px] font-black tracking-widest uppercase px-2.5 py-1 rounded-lg shrink-0 select-none
+                font-code text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-lg shrink-0 select-none
                 bg-black/5 backdrop-blur-xs border border-white/20 shadow-xs transition-colors duration-200
                 ${
                   isPink
