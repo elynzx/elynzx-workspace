@@ -1,29 +1,30 @@
-import { useState } from "react";
 import {
   PortfolioHeader,
   PortfolioSidebar,
   PortfolioContent,
 } from "./components";
-import type { portfolioSection } from "./utils/portfolioSection";
-import { useWorkspaceStore } from "../../store/useWorkspaceStore";
-import { useDraggable } from "../../shared/hooks/useDraggable";
+import { usePortfolio } from "./hooks/usePortfolio";
 
 export const Portfolio = () => {
-  const { isPortfolioOpen, togglePortfolio } = useWorkspaceStore();
-  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
-    useDraggable();
-  const [activeTab, setActiveTab] = useState<portfolioSection>("home");
-  const activeApp = useWorkspaceStore((state) => state.activeApp);
-  const focusApp = useWorkspaceStore((state) => state.focusApp);
+  const {
+    isOpen,
+    zIndex,
+    isDragging,
+    isProjectsTab,
+    activeTab,
+    positionStyle,
+    handleMouseDown,
+    handleTouchStart,
+    onClose,
+    onFocus,
+    onTabChange,
+  } = usePortfolio();
 
-  const zIndex = activeApp === "Portfolio" ? "z-50" : "z-10";
-
-  if (!isPortfolioOpen) return null;
-  const isProjectsTab = activeTab === "projects";
+  if (!isOpen) return null;
 
   return (
     <div
-      onClick={() => focusApp("Portfolio")}
+      onClick={onFocus}
       style={window.innerWidth > 768 ? positionStyle : undefined}
       className={`${zIndex}
         fixed flex flex-col overflow-hidden pointer-events-auto select-none
@@ -33,7 +34,7 @@ export const Portfolio = () => {
       `}
     >
       <PortfolioHeader
-        onClose={togglePortfolio}
+        onClose={onClose}
         onDragStart={handleMouseDown}
         onTouchStart={handleTouchStart}
         isDragging={isDragging}
@@ -42,7 +43,7 @@ export const Portfolio = () => {
       <div className="flex flex-1 min-h-0 w-full flex-col md:flex-row bg-black/20">
         <PortfolioSidebar
           activeTab={activeTab}
-          onTabChange={setActiveTab}
+          onTabChange={onTabChange}
           isProjectsTab={isProjectsTab}
         />
         <PortfolioContent activeTab={activeTab} />
