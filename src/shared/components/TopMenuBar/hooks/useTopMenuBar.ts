@@ -4,7 +4,7 @@ import { useWorkspaceStore } from "../../../../store/useWorkspaceStore";
 
 export const useTopMenuBar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const { isPortfolioOpen, isMusicOpen, isTasksOpen } = useWorkspaceStore();
+  const isAppOpen = useWorkspaceStore((state) => state.isAppOpen);
 
   useEffect(() => {
     const dateRefreshTimer = setInterval(
@@ -17,9 +17,9 @@ export const useTopMenuBar = () => {
   const { timeString, dateString } = formatDate(currentDate);
 
   const getActiveAppName = () => {
-    if (isPortfolioOpen) return "My Portfolio";
-    if (isMusicOpen) return "Music Player";
-    if (isTasksOpen) return "Beary Focused App";
+    if (isAppOpen.Portfolio) return "My Portfolio";
+    if (isAppOpen.Music) return "Music Player";
+    if (isAppOpen.Tasks) return "Beary Focused App";
 
     return "My Workspace";
   };
