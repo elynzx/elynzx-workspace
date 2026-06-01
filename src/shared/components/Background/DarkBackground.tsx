@@ -1,34 +1,13 @@
-import { useMemo, type CSSProperties, useState, useEffect } from "react";
-import { useMobile } from "../../hooks/useMobile";
-
-interface StarProps {
-  id: number;
-  top: string;
-  left: string;
-  size: string;
-  duration: string;
-  delay: string;
-}
+import { type CSSProperties } from "react";
+import { useBackground } from "./hooks/useBackground";
 
 export const DarkBackground = () => {
-  const isMobile = useMobile();
-  const count = isMobile ? 40 : 180;
-
-  const stars = useMemo<StarProps[]>(() => {
-    return Array.from({ length: count }).map((_, i) => {
-      const isBright = Math.random() > 0.85;
-      return {
-        id: i,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        size: isBright
-          ? `${Math.random() * 3 + 3}px`
-          : `${Math.random() * 1.5 + 0.5}px`,
-        duration: `${Math.random() * 4 + 3}s`,
-        delay: `${Math.random() * 5}s`,
-      };
-    });
-  }, [count]);
+  const { stars, isMobile } = useBackground({
+    mobileCount: 40,
+    desktopCount: 180,
+    minSize: 3,
+    maxSizeModifier: 3,
+  });
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#030014]">
@@ -38,7 +17,11 @@ export const DarkBackground = () => {
       <div className="absolute top-[45%] left-[5%] w-[28vw] h-[28vw] rounded-full bg-pink-300/10 blur-[90px] mix-blend-screen" />
       <div className="absolute bottom-[10%] left-[25%] w-[30vw] h-[30vw] rounded-full bg-rose-400/10 blur-[100px] mix-blend-screen" />
       <div className="absolute top-[-10%] right-[10%] w-[20vw] h-[20vw] rounded-full bg-pink-100/15 blur-[80px] mix-blend-screen" />
-      <div className="absolute inset-[-10%] md:inset-[-20%] animate-galaxy opacity-15 md:opacity-25 blur-3xl md:blur-[100px] mix-blend-color-dodge" />
+
+      {!isMobile && (
+        <div className="absolute inset-[-10%] md:inset-[-20%] animate-galaxy opacity-15 md:opacity-25 blur-3xl md:blur-[100px] mix-blend-color-dodge" />
+      )}
+
       <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] before:absolute before:inset-0 before:bg-linear-to-tr before:from-transparent before:via-white/10 before:to-pink-400/30" />
 
       {stars.map((star) => {
