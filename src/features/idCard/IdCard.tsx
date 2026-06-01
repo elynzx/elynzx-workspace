@@ -29,6 +29,7 @@ const idData = {
 };
 
 export const IdCard = () => {
+  const isAppOpen = useWorkspaceStore((state) => state.isAppOpen);
   const activeApp = useWorkspaceStore((state) => state.activeApp);
   const focusApp = useWorkspaceStore((state) => state.focusApp);
   const zIndex = activeApp === "IdCard" ? "z-50" : "z-10";
@@ -38,6 +39,8 @@ export const IdCard = () => {
   const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
     useDraggable({ x: initialX, y: initialY });
 
+  if (!isAppOpen.IdCard) return null;
+  
   return (
     <div
       onClick={() => focusApp("IdCard")}
