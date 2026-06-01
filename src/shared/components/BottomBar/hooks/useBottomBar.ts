@@ -9,6 +9,7 @@ import { useWorkspaceStore } from "../../../../store/useWorkspaceStore";
 export function useBottomBar() {
   const isAppOpen = useWorkspaceStore((state) => state.isAppOpen);
   const toggleApp = useWorkspaceStore((state) => state.toggleApp);
+  const focusApp = useWorkspaceStore((state) => state.focusApp);
 
   const dockItems = [
     {
@@ -16,14 +17,20 @@ export function useBottomBar() {
       label: "ID Card",
       Icon: IdentificationCardIcon,
       isActive: isAppOpen.IdCard,
-      onToggle: () => toggleApp("IdCard"),
+      onToggle: () => {
+        toggleApp("IdCard");
+        focusApp("IdCard");
+      },
     },
     {
       id: "portfolio",
       label: "Portfolio",
       Icon: FolderOpenIcon,
       isActive: isAppOpen.Portfolio,
-      onToggle: () => toggleApp("Portfolio"),
+      onToggle: () => {
+        toggleApp("Portfolio");
+        focusApp("Portfolio");
+      },
     },
     {
       id: "music",
