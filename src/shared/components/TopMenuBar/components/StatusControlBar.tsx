@@ -22,7 +22,7 @@ export const StatusControlBar = ({
   onToggleTheme,
   themeMode,
 }: Props) => (
-  <div className="hidden md:flex items-center gap-4.5 text-white px-8 py-3 rounded-xl shadow-lg select-none bg-black/20 backdrop-blur-sm">
+  <div className="hidden md:flex items-center gap-4.5 text-ui-text px-8 h-9 rounded-xl select-none backdrop-blur-2xl transition-colors duration-300">
     <div
       onClick={onToggleTheme}
       className="cursor-pointer active:scale-95 transition-all"
@@ -31,37 +31,36 @@ export const StatusControlBar = ({
         <MoonIcon
           size={18}
           weight="bold"
-          className="text-purple-300 hover:text-purple-400"
+          className="text-ui-text hover:text-pink-400"
         />
       ) : (
         <SunIcon
           size={18}
           weight="bold"
-          className="text-amber-400 hover:text-amber-300"
+          className="text-pink-400 hover:text-ui-text"
         />
       )}
     </div>
-    <span className="w-px h-4 bg-white/10" />
-
+    <span className="w-px h-4 bg-ui-text/20 transition-colors" />
     <EnvelopeSimpleIcon
       size={18}
       weight="bold"
       onClick={onToggleContact}
-      className="hover:text-[#F69BC3] active:scale-95 cursor-pointer transition-all"
+      className="hover:text-pink-400 active:scale-95 cursor-pointer transition-all"
     />
     <WifiHighIcon size={18} weight="bold" />
     <SpeakerHighIcon
       size={18}
       weight="bold"
       onClick={onToggleSpecs}
-      className="cursor-pointer hover:text-[#F69BC3] active:scale-95 transition-all"
+      className="cursor-pointer hover:text-pink-400 active:scale-95 transition-all"
     />
     <BatteryMediumIcon size={18} weight="bold" />
     <MagnifyingGlassIcon
       size={18}
       weight="bold"
       onClick={onToggleSpecs}
-      className="cursor-pointer hover:text-[#F69BC3] active:scale-95 transition-all"
+      className="cursor-pointer hover:text-pink-400 active:scale-95 transition-all"
     />
   </div>
 );

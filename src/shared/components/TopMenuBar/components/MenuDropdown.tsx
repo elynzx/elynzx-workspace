@@ -29,8 +29,8 @@ export const MenuDropdown = ({
             onClick={() => toggleDropdown(type)}
             className={`px-4 py-2 rounded-xl capitalize font-bold transition-all duration-200 focus:outline-none cursor-pointer ${
               isBtnActive
-                ? "text-primary bg-white/30"
-                : "text-white hover:bg-[#F69BC3] hover:text-white"
+                ? "text-ui-text bg-ui-inner border border-ui-inner shadow-xs"
+                : "text-ui-text/70 hover:bg-[#F69BC3] hover:text-white"
             }`}
           >
             {type}

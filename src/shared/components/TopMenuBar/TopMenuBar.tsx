@@ -1,4 +1,4 @@
-import { SparkleIcon } from "@phosphor-icons/react";
+import { HeartIcon } from "@phosphor-icons/react";
 import { useTopMenuBar } from "./hooks/useTopMenuBar";
 import { useDropdown } from "./hooks/useDropdown";
 import { MenuDropdown } from "./components/MenuDropdown";
@@ -24,17 +24,17 @@ export const TopMenuBar = () => {
     <div
       ref={menuRef}
       className="absolute top-0 left-0 w-full h-16 px-4 md:px-8 z-50 flex justify-between items-center select-none text-sm font-bold tracking-wide transition-all duration-300
-      bg-black/5 backdrop-blur-2xl border-b-2 border-white/10 shadow-xl text-white"
+      bg-ui-glass/5 backdrop-blur-2xl border-b border-ui-border shadow-[0_20px_50px_rgba(122,100,223,0.25)]  text-ui-text ring-1 ring-ui-border"
     >
       <div className="flex items-center gap-5 md:gap-8">
-        <SparkleIcon
+        <HeartIcon
           size={24}
           weight="bold"
-          className="cursor-pointer text-pink-500 drop-shadow-[0_2px_4px_rgba(246,155,195,0.4)] hover:scale-110 active:scale-95 transition-all"
+          className="cursor-pointer text-ui-accent drop-shadow-[0_2px_4px_rgba(246,155,195,0.4)] hover:scale-110 active:scale-95 transition-all"
         />
 
-        <span className="font-semibold tracking-wider text-white text-lg w-45">
-          ♡ {activeAppName} ♡
+        <span className="font-semibold tracking-wider text-ui-text text-lg w-45">
+        {activeAppName}
         </span>
 
         <MenuDropdown
