@@ -33,17 +33,17 @@ export const PROJECTS_DATA: ProjectItem[] = [
     githubUrl: "https://github.com",
     slides: [
       {
-        label: "01 // FINAL PRODUCT RENDER",
+        label: "01 FINAL PRODUCT RENDER",
         caption: "Multi-device presentation of the final user responsive layout interface across desktop, tablet, and smartphone screens.",
         imgUrl: luminaMockup
       },
       {
-        label: "02 // FEATURE-BASED ARCHITECTURE",
+        label: "02 FEATURE-BASED ARCHITECTURE",
         caption: "Decoupled domain layout dividing business logics into independent features modules to ensure scalability and strict separation of concerns.",
         imgUrl: luminaDb
       },
       {
-        label: "03 // RELATIONAL DATABASE SCHEMA (ERD)",
+        label: "03 RELATIONAL DATABASE SCHEMA (ERD)",
         caption: "MySQL relational design optimizing connections across tables handling roles, users, encrypted credentials, real-time booking vectors, and digital PDF transactions.",
         imgUrl: luminaDb
       }
@@ -51,20 +51,20 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "pawguard",
-    name: "PawGuard Pet Insurance",
-    scope: "End-to-End Design & Persistent State Modeling",
+    name: "PawGuard",
+    scope: "Persistent State Modeling",
     techTags: ["React 18", "TypeScript", "Supabase", "Zustand", "PostgreSQL"],
-    desc: "A modern pet insurance web application customized for the Peruvian market. Built with a responsive mobile-first UI using a scalable Feature-Based Architecture. Implements a multi-step smart onboarding flow with Zustand persistent state tracking, interactive maps via React Leaflet, and automatic session token authentication using Supabase PostgreSQL RLS policies.",
+    desc: "A modern pet insurance web application customized for the Peruvian market. Implements a multi-step smart onboarding flow with Zustand persistent state tracking, interactive maps via React Leaflet, and automatic session token authentication using Supabase PostgreSQL RLS policies.",
     liveUrl: "https://vercel.app",
     githubUrl: "https://github.com",
     slides: [
       {
-        label: "01 // USER RESPONSIVE CANVAS",
+        label: "01 USER RESPONSIVE CANVAS",
         caption: "Mobile-first onboarding multidevice architecture customized with custom curves and highly readable accessibility typography lines.",
         imgUrl: pawguardMockup
       },
       {
-        label: "02 // STATE MACHINES & ONBOARDING LIFECYCLE",
+        label: "02 STATE MACHINES & ONBOARDING LIFECYCLE",
         caption: "Zustand global persistence sequence tracker mapping data flows across fields: Owner Details → Pet Registry → Plan Filters → Supabase Authentication Checkout.",
         imgUrl: luminaDb
       }
