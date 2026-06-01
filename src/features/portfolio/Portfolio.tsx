@@ -28,9 +28,9 @@ export const Portfolio = () => {
       style={window.innerWidth > 768 ? positionStyle : undefined}
       className={`${zIndex}
         fixed flex flex-col overflow-hidden pointer-events-auto select-none
-        bg-linear-to-b from-transparent to-black/40 backdrop-blur-xl border-white/20
-        w-[92%] max-w-full rounded-2xl border-2 md:absolute md:w-[92%] md:max-w-7xl md:h-175 md:bottom-auto md:right-auto transition-shadow duration-150
-        ${isDragging ? "md:shadow-[0_55px_110px_rgba(20,10,40,0.4)] md:scale-[1.001]" : ""}
+        bg-ui-glass/40 border border-ui-border ring-1 ring-ui-border backdrop-blur-3xl
+        w-[92%] max-w-full rounded-2xl  md:absolute md:w-[92%] md:max-w-7xl md:h-175 md:bottom-auto md:right-auto transition-all duration-300
+        ${isDragging ? "md:shadow-[0_5px_50px_rgba(20,10,40,0.4)]" : ""}
       `}
     >
       <PortfolioHeader
@@ -40,7 +40,7 @@ export const Portfolio = () => {
         isDragging={isDragging}
       />
 
-      <div className="flex flex-1 min-h-0 w-full flex-col md:flex-row bg-black/20">
+      <div className="flex flex-1 min-h-0 w-full flex-col md:flex-row transition-colors duration-300">
         <PortfolioSidebar
           activeTab={activeTab}
           onTabChange={onTabChange}
