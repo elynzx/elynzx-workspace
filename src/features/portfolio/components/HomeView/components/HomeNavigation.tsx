@@ -10,7 +10,7 @@ export const HomeNavigation = () => {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 p-1 bg-white/5 border border-white/10 rounded-xl w-fit select-none mr-6">
+    <div className="flex flex-wrap gap-2 p-1 bg-ui-inner border border-ui-border rounded-xl w-fit select-none mr-6">
       {HOME_TABS.map(({ id, label, Icon }) => {
         const isActive = activeTab === id;
         return (

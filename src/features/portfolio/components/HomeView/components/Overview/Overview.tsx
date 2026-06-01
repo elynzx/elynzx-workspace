@@ -14,10 +14,10 @@ export const Overview = () => {
           className="w-14 md:w-35 filter drop-shadow-[0_8px_16px_rgba(244,63,94,0.15)] hover:scale-105 transition-all duration-300 cursor-pointer shrink-0"
         />
         <div className="flex flex-col items-center justify-center gap-1">
-          <h1 className="text-3xl font-extrabold font-secondary  tracking-tight leading-none m-0 text-pink-300">
+          <h1 className="text-3xl font-extrabold font-secondary tracking-tight leading-none m-0 text-ui-accent">
             I'm {name}
           </h1>
-          <div className="flex items-center mt-1 text-white text-[10px] md:text-xs font-black tracking-widest uppercase">
+          <div className="flex items-center mt-1 text-ui-text text-[10px] md:text-xs font-black tracking-widest uppercase">
             {role}
           </div>
           <TechDock />

@@ -34,7 +34,7 @@ const METRICS_DATA: MetricItem[] = [
   {
     id: "03",
     theme: "pink",
-    icon: <CodeIcon size={17} weight="bold" />, 
+    icon: <CodeIcon size={17} weight="bold" />,
     category: "community",
     title: "IEEE WIE Volunteer",
     desc: "Fostering STEM & collaborative teamwork.",
@@ -58,13 +58,13 @@ export const MetricGrid = () => {
         return (
           <div
             key={tile.id}
-            className="w-full flex items-center justify-between pb-3 bg-transparent border-b border-dashed border-white/15 text-left group/tile transition-all duration-200 last:border-b-0 last:pb-0"
+            className="w-full flex items-center justify-between pb-3 bg-transparent border-b border-dashed border-ui-inner text-left group/tile transition-all duration-200 last:border-b-0 last:pb-0"
           >
             <div className="flex items-center gap-4 min-w-0 flex-1">
               <div
                 className={`shrink-0 transition-all duration-300 group-hover/tile:scale-110 filter ${
                   isPink
-                    ? "text-pink-300 group-hover/tile:drop-shadow-[0_0_6px_rgba(244,63,94,0.6)]"
+                    ? "text-ui-accent group-hover/tile:drop-shadow-[0_0_6px_rgba(244,63,94,0.6)]"
                     : "text-sky-300 group-hover/tile:drop-shadow-[0_0_6px_rgba(56,189,248,0.6)]"
                 }`}
               >
@@ -73,7 +73,7 @@ export const MetricGrid = () => {
 
               <div className="flex flex-col min-w-0 flex-1 gap-0.5">
                 <span
-                  className={`text-xs md:text-sm font-bold text-white transition-colors duration-200 tracking-wide truncate ${
+                  className={`text-xs md:text-sm font-bold text-ui-text transition-colors duration-200 tracking-wide truncate ${
                     isPink
                       ? "group-hover/tile:text-pink-200"
                       : "group-hover/tile:text-sky-200"
@@ -81,7 +81,7 @@ export const MetricGrid = () => {
                 >
                   {tile.title}
                 </span>
-                <p className="text-[11px] md:text-[13px] text-white/60 font-medium truncate">
+                <p className="text-[11px] md:text-[13px] text-ui-text/60 font-medium truncate">
                   {tile.desc}
                 </p>
               </div>
@@ -89,11 +89,11 @@ export const MetricGrid = () => {
 
             <div
               className={`
-                font-code text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-lg shrink-0 select-none
-                bg-black/5 backdrop-blur-xs border border-white/20 shadow-xs transition-colors duration-200
+                font-code text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-lg shrink-0 select-none
+                bg-ui-glass/50 border border-ui-border shadow-xs transition-colors duration-200
                 ${
                   isPink
-                    ? "text-pink-300 group-hover/tile:bg-pink-500/20 group-hover/tile:border-pink-400/30"
+                    ? "text-ui-accent group-hover/tile:bg-pink-500/20 group-hover/tile:border-pink-400/30"
                     : "text-sky-300 group-hover/tile:bg-sky-500/20 group-hover/tile:border-sky-400/30"
                 }
               `}
