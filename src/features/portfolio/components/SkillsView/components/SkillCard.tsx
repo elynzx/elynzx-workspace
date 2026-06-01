@@ -9,17 +9,16 @@ export const SkillCard = ({ name, details }: SkillCardProps) => {
   const toolsArray = details.split(", ");
 
   return (
-    <div className="flex flex-col w-full p-4 rounded-xl bg-white/20 border border-white/10 hover:border-pink-300/50 hover:bg-white/30 hover:scale-[1.01] hover:shadow-md transition-all duration-200 group relative overflow-hidden text-left pointer-events-auto">
-      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-pink-400 transition-colors" />
+    <div className="tracking-wider flex flex-col w-full p-4 rounded-xl bg-ui-inner/80 border border-ui-border hover:border-pink-300/50  hover:scale-[1.01] hover:shadow-md transition-all duration-200 group relative overflow-hidden text-left pointer-events-auto">
 
       <div className="flex justify-between items-center w-full mb-3 pl-1">
-        <span className="text-xs font-black text-white group-hover:text-pink-300 transition-colors tracking-wide">
+        <span className="text-sm font-black text-ui-text/90 group-hover:text-ui-accent transition-colors tracking-wider">
           {name}
         </span>
         <SparkleIcon
           size={12}
           weight="fill"
-          className="text-white/10 group-hover:text-pink-300 group-hover:rotate-45 transition-all duration-300 transform"
+          className="text-ui-text/10 group-hover:text-ui-accent group-hover:rotate-45 transition-all duration-300 transform"
         />
       </div>
 
@@ -27,7 +26,7 @@ export const SkillCard = ({ name, details }: SkillCardProps) => {
         {toolsArray.map((tool) => (
           <span
             key={tool}
-            className="text-[12px] font-bold bg-white/80 border border-white/10 px-2.5 py-1 rounded-md shadow-2xs flex items-center gap-1 hover:border-pink-300/40 hover:bg-white/20 transition-all duration-150"
+            className="text-[13px] text-ui-text/90 leading-relaxed text-justify bg-ui-inner/30 border border-ui-border px-2.5 py-1 rounded-md shadow-2xs flex items-center gap-1 hover:bg-ui-glass/40 transition-all duration-150"
           >
             <SparkleIcon
               size={8}
