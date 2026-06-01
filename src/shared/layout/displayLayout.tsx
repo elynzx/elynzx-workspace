@@ -6,14 +6,14 @@ import { BottomBar } from "../components/BottomBar/BottomBar";
 import { TopMenuBar } from "../components/TopMenuBar/TopMenuBar";
 
 export const DisplayLayout = () => {
-  const { isIdCardOpen } = useWorkspaceStore();
+  const isAppOpen = useWorkspaceStore((state) => state.isAppOpen);
 
   return (
     <div className="w-screen h-screen relative overflow-hidden select-none">
       <Background />
       <TopMenuBar />
       <main className="absolute inset-0 top-12 bottom-20 w-full h-[calc(100vh-8rem)] p-4 overflow-hidden pointer-events-none">
-        {isIdCardOpen && <IdCard />}
+        {isAppOpen  && <IdCard />}
         <Portfolio />
       </main>
       <BottomBar />
