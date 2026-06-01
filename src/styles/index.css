@@ -8,25 +8,42 @@
   --font-secondary: "Source Code Pro", monospace;
 
   /*Base*/
-  --color-main: #2e1065;
-  --color-dark: #222222;
   --color-accent: #f472b6;
-  --color-bg-primary: #7058da;
+  --color-ui-text: var(--ui-text);
+  --color-ui-glass: var(--ui-glass);
+  --color-ui-inner: var(--ui-inner);
+  --color-ui-accent: var(--ui-accent);
+  --color-ui-sky: var(--ui-sky);
+  --color-ui-border: var(--ui-border);
+  --color-ui-error: var(--ui-error);
 }
 
 :root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color-scheme: light dark;
+  --ui-text: #ffffff;
+  --ui-glass: rgba(0, 0, 0, 0.87);
+  --ui-inner: rgba(128, 128, 128, 0.103);
+  --ui-accent: var(--color-pink-300);
+  --ui-sky: var(--color-sky-300);
+  --ui-border: rgba(255, 255, 255, 0.089);
 }
 
+.light {
+  --ui-text: #ffffff;
+  --ui-glass: rgba(18, 10, 90, 0.486);
+  --ui-inner: rgba(52, 27, 83, 0.212);
+  --ui-border: rgba(247, 247, 247, 0.322);
+  --ui-accent: rgb(255, 255, 255);
+  --ui-sky: var(--color-sky-600);
+  --ui-error: rgba(18, 10, 90, 0.568);
+}
 body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--font-primary);
   font-size: 0.6rem;
-  color: var(--color-main);
 }
 
 button {
