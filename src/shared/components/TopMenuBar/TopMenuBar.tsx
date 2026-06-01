@@ -14,7 +14,9 @@ const SYSTEM_SPECS = [
 
 export const TopMenuBar = () => {
   const { timeString, dateString, activeAppName } = useTopMenuBar();
-  const { toggleSpecs, toggleContact } = useWorkspaceStore();
+  const toggleApp = useWorkspaceStore((state) => state.toggleApp);
+  const toggleTheme = useWorkspaceStore((state) => state.toggleTheme);
+  const themeMode = useWorkspaceStore((state) => state.themeMode);
   const { activeDropdown, menuRef, toggleDropdown, closeDropdown } =
     useDropdown();
 
@@ -31,7 +33,7 @@ export const TopMenuBar = () => {
           className="cursor-pointer text-pink-500 drop-shadow-[0_2px_4px_rgba(246,155,195,0.4)] hover:scale-110 active:scale-95 transition-all"
         />
 
-        <span className="font-extrabold tracking-wider text-white text-lg w-45">
+        <span className="font-semibold tracking-wider text-white text-lg w-45">
           ♡ {activeAppName} ♡
         </span>
 
@@ -39,16 +41,18 @@ export const TopMenuBar = () => {
           activeDropdown={activeDropdown}
           toggleDropdown={toggleDropdown}
           closeDropdown={closeDropdown}
-          toggleContact={toggleContact}
-          toggleSpecs={toggleSpecs}
+          toggleContact={() => toggleApp("Contact")}
+          toggleSpecs={() => toggleApp("Specs")}
           systemSpecs={SYSTEM_SPECS}
         />
       </div>
 
       <div className="flex items-center gap-5">
         <StatusControlBar
-          onToggleContact={toggleContact}
-          onToggleSpecs={toggleSpecs}
+          onToggleContact={() => toggleApp("Contact")}
+          onToggleSpecs={() => toggleApp("Specs")}
+          onToggleTheme={toggleTheme}
+          themeMode={themeMode}
         />
         <DateTimeDisplay date={dateString} time={timeString} />
       </div>
