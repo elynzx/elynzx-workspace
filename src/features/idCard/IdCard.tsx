@@ -5,13 +5,13 @@ import {
 } from "@phosphor-icons/react";
 import ProfilePhoto from "../../assets/ProfilePhoto/Profile_02.png";
 import PaperClip from "../../assets/stickers/paperClip.png";
-import { useDraggable } from "../../shared/hooks/useDraggable";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useWorkspaceStore } from "../../store/useWorkspaceStore";
 import { useEffect, useState } from "react";
 import Bunny01 from "../../assets/stickers/bunny01.svg";
 import Bunny02 from "../../assets/stickers/bunny02.svg";
 import Stars from "../../assets/stickers/loading.png";
+import { motion } from "motion/react";
 
 const idData = {
   season: "TERM 08",
@@ -35,12 +35,10 @@ export const IdCard = () => {
   const activeApp = useWorkspaceStore((state) => state.activeApp);
   const focusApp = useWorkspaceStore((state) => state.focusApp);
   const zIndex = activeApp === "IdCard" ? "z-50" : "z-10";
-  const initialX = window.innerWidth > 768 ? window.innerWidth * 0.65 : 40;
-  const initialY = window.innerWidth > 768 ? window.innerHeight * 0.22 : 0;
   const [isFirstFrame, setIsFirstFrame] = useState(true);
-
-  const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
-    useDraggable({ x: initialX, y: initialY });
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  const initialX = isMobile ? 15 : window.innerWidth * 0.63;
+  const initialY = isMobile ? 185 : window.innerHeight * 0.15;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,14 +51,16 @@ export const IdCard = () => {
   if (!isAppOpen.IdCard) return null;
 
   return (
-    <div
-      onClick={() => focusApp("IdCard")}
-      onMouseDown={handleMouseDown}
-      onTouchStart={handleTouchStart}
-      style={window.innerWidth > 768 ? positionStyle : undefined}
-      className={`${zIndex} mt-48 ml-3 md:ml-0 md:mt-0 cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-95 md:max-w-lg p-5 md:p-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col  pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
-        isDragging ? "shadow-[0_30px_70px_rgba(244,63,94,0.3)]" : ""
-      }`}
+    <motion.div
+      drag
+      dragMomentum={false}
+      initial={{ x: initialX, y: initialY }}
+      whileDrag={{
+        scale: 1.02,
+        boxShadow: "0px 30px 70px rgba(244,63,94,0.3)",
+      }}
+      onPointerDown={() => focusApp("IdCard")}
+      className={`${zIndex} cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-95 md:max-w-lg p-5 md:p-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col pointer-events-auto select-none active:cursor-grabbing rotate-3`}
     >
       <div className="flex flex-col items-center w-full gap-1.5 mb-2.5 md:mb-4">
         <div className="w-10 h-2 md:h-4 md:w-14 bg-[#9b6d8a] rounded-full border border-pink-300 shadow-inner" />
@@ -176,6 +176,6 @@ export const IdCard = () => {
         alt="Animated bunny"
         className="absolute w-30 h-auto -top-22 right-14 md:-top-20 md:w-30 md:right-25 md:h-auto z-50 pointer-events-none "
       />
-    </div>
+    </motion.div>
   );
 };
