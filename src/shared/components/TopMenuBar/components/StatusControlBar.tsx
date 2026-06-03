@@ -6,21 +6,16 @@ import {
   WifiHighIcon,
   SunIcon,
   MoonIcon,
-  DotsThreeOutlineVerticalIcon,
 } from "@phosphor-icons/react";
 import type { ThemeMode } from "../../../../store/useWorkspaceStore";
 
 interface Props {
-  onToggleContact: () => void;
-  onToggleSpecs: () => void;
   onToggleTheme: () => void;
   themeMode: ThemeMode;
   time: string;
 }
 
 export const StatusControlBar = ({
-  onToggleContact,
-  onToggleSpecs,
   onToggleTheme,
   themeMode,
   time,
@@ -33,7 +28,7 @@ export const StatusControlBar = ({
       >
         {themeMode === "light" ? (
           <MoonIcon
-            size={18}
+            size={18} 
             weight="bold"
             className="text-ui-text hover:text-pink-400"
           />
@@ -57,21 +52,18 @@ export const StatusControlBar = ({
         <EnvelopeSimpleIcon
           size={18}
           weight="bold"
-          onClick={onToggleContact}
           className="hover:text-pink-400 active:scale-95 cursor-pointer transition-all"
         />
         <WifiHighIcon size={18} weight="bold" />
         <SpeakerHighIcon
           size={18}
           weight="bold"
-          onClick={onToggleSpecs}
           className="cursor-pointer hover:text-pink-400 active:scale-95 transition-all"
         />
         <BatteryMediumIcon size={18} weight="bold" />
         <MagnifyingGlassIcon
           size={18}
           weight="bold"
-          onClick={onToggleSpecs}
           className="cursor-pointer hover:text-pink-400 active:scale-95 transition-all"
         />
       </div>
