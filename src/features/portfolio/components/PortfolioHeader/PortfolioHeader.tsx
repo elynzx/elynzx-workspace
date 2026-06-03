@@ -17,7 +17,7 @@ export const PortfolioHeader = ({
     <div
       onMouseDown={onDragStart}
       onTouchStart={onTouchStart}
-      className={`w-full h-14 flex items-center justify-between px-6 bg-ui-glass/40 border-b border-ui-inner shrink-0 select-none transition-colors duration-300 ${
+      className={`w-full h-14 flex items-center justify-between px-6 bg-ui-glass/40 shrink-0 select-none transition-colors duration-300 ${
         isDragging
           ? "cursor-crosshair"
           : "md:cursor-crosshair md:active:cursor-grabbing"

@@ -1,9 +1,7 @@
-import luminaMockup from "../../../assets/Projects/pawguard/pawguard-project.png";
-import pawguardMockup from "../../../assets/Projects/pawguard/pawguard-project.png";
-import dashboardMockup from "../../../assets/Projects/pawguard/pawguard-project.png";
-import luluCoMockup from "../../../assets/Projects/pawguard/pawguard-project.png";
+import luminaMockup from "../../../../../assets/Projects/pawguard/pawguard-project.png";
+import pawguardMockup from "../../../../../assets/Projects/pawguard/pawguard-project.png";
 
-import luminaDb from "../../../assets/Projects/pawguard/image.png";
+import luminaDb from "../../../../../assets/Projects/pawguard/image.png";
 
 export interface ProjectSlide {
   label: string;
@@ -34,20 +32,23 @@ export const PROJECTS_DATA: ProjectItem[] = [
     slides: [
       {
         label: "01 FINAL PRODUCT RENDER",
-        caption: "Multi-device presentation of the final user responsive layout interface across desktop, tablet, and smartphone screens.",
-        imgUrl: luminaMockup
+        caption:
+          "Multi-device presentation of the final user responsive layout interface across desktop, tablet, and smartphone screens.",
+        imgUrl: luminaMockup,
       },
       {
         label: "02 FEATURE-BASED ARCHITECTURE",
-        caption: "Decoupled domain layout dividing business logics into independent features modules to ensure scalability and strict separation of concerns.",
-        imgUrl: luminaDb
+        caption:
+          "Decoupled domain layout dividing business logics into independent features modules to ensure scalability and strict separation of concerns.",
+        imgUrl: luminaDb,
       },
       {
         label: "03 RELATIONAL DATABASE SCHEMA (ERD)",
-        caption: "MySQL relational design optimizing connections across tables handling roles, users, encrypted credentials, real-time booking vectors, and digital PDF transactions.",
-        imgUrl: luminaDb
-      }
-    ]
+        caption:
+          "MySQL relational design optimizing connections across tables handling roles, users, encrypted credentials, real-time booking vectors, and digital PDF transactions.",
+        imgUrl: luminaDb,
+      },
+    ],
   },
   {
     id: "pawguard",
@@ -60,14 +61,16 @@ export const PROJECTS_DATA: ProjectItem[] = [
     slides: [
       {
         label: "01 USER RESPONSIVE CANVAS",
-        caption: "Mobile-first onboarding multidevice architecture customized with custom curves and highly readable accessibility typography lines.",
-        imgUrl: pawguardMockup
+        caption:
+          "Mobile-first onboarding multidevice architecture customized with custom curves and highly readable accessibility typography lines.",
+        imgUrl: pawguardMockup,
       },
       {
         label: "02 STATE MACHINES & ONBOARDING LIFECYCLE",
-        caption: "Zustand global persistence sequence tracker mapping data flows across fields: Owner Details → Pet Registry → Plan Filters → Supabase Authentication Checkout.",
-        imgUrl: luminaDb
-      }
-    ]
+        caption:
+          "Zustand global persistence sequence tracker mapping data flows across fields: Owner Details → Pet Registry → Plan Filters → Supabase Authentication Checkout.",
+        imgUrl: luminaDb,
+      },
+    ],
   },
 ];

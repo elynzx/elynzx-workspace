@@ -4,14 +4,14 @@ import {
   BookmarkSimpleIcon,
   SparkleIcon,
 } from "@phosphor-icons/react";
-import { ABOUT_DATA } from "../../../../data/aboutData";
+import { ABOUT_DATA } from "../../../data/aboutData";
 
 export const Biography = () => {
   const { bio, academicHighlight, volunteerWork, status, credentials } =
     ABOUT_DATA.about;
 
   return (
-    <div className="flex flex-col gap-4 w-full px-3">
+    <div className="flex flex-col gap-4 w-full px-2 md:px-3">
       <div className="flex justify-between items-center border-b border-ui-inner pb-3">
         <div className="text-left">
           <h3 className="text-2xl font-black text-ui-text tracking-tight">
@@ -31,7 +31,7 @@ export const Biography = () => {
         {bio}
       </p>
 
-      <div className="flex flex-col gap-3 bg-ui-inner border border-ui-inner p-4 rounded-2xl shadow-inner mt-2 text-left transition-colors duration-300">
+      <div className="flex flex-col gap-3 bg-ui-inner border border-ui-inner p-4 rounded-lg md:rounded-2xl shadow-inner mt-2 text-left transition-colors duration-300">
         <div className="flex items-start gap-3 text-xs md:text-sm">
           <IdentificationCardIcon
             size={20}
@@ -73,7 +73,7 @@ export const Biography = () => {
           {credentials.map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-ui-inner text-ui-text/90 border border-ui-inner px-3 py-1.5 rounded-full shadow-xs font-bold flex items-center gap-1.5 hover:bg-ui-inner/50 hover:border-pink-300/30 transition-all duration-150"
+              className="text-xs bg-ui-inner text-ui-text/90 border border-ui-inner px-3 md:px-4 py-2 md:py-1.5 rounded-lg shadow-xs font-bold flex items-center gap-1.5 hover:bg-ui-inner/50 hover:border-pink-300/30 transition-all duration-150"
             >
               <SparkleIcon
                 size={10}

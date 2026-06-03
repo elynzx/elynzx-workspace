@@ -7,7 +7,7 @@ import { useHomeTabStore } from "../store/useHomeTabStore";
  *
  * @returns An object containing the HTML container reference.
  */
-export const useContentScroll = () => {
+export const useHomeScroll = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const {
     activeTab,

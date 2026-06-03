@@ -19,7 +19,7 @@ export const Input = ({
   error,
   disabled,
 }: InputProps) => (
-  <div className="flex flex-col  w-full gap-2 text-left py-1">
+  <div className="flex flex-col w-full gap-2 text-left py-1">
     {label && (
       <label
         htmlFor={name}
@@ -39,8 +39,8 @@ export const Input = ({
         disabled={disabled}
         onPaste={(e) => e.preventDefault()}
         autoComplete="off"
-        className={`flex-1 text-xs md:text-sm text-ui-text bg-ui-inner border rounded-xl px-3 py-2.5 outline-none transition-all placeholder-ui-text/30
-          ${error ? "border-2 border-ui-error bg-pink-500/5" : "border-ui-inner focus:border-ui-border focus:bg-ui-glass/50"}`}
+        className={`flex-1 text-xs md:text-sm text-ui-text bg-ui-inner border rounded-lg px-3 py-2.5 outline-none transition-all placeholder-ui-text/30
+          ${error ? "border-2 border-ui-error bg-pink-500/5" : "border-ui-border focus:border-ui-border focus:bg-ui-glass/50"}`}
       />
       {error && (
         <span className="text-[10px] md:text-xs font-bold text-ui-error mt-1 pl-1 animate-in fade-in">
@@ -78,8 +78,8 @@ export const TextArea = ({
         rows={3}
         onChange={(e) => onChange?.(e.target.value)}
         disabled={disabled}
-        className={`flex-1 text-xs md:text-sm text-ui-text bg-ui-inner border rounded-xl px-3 py-2.5 outline-none transition-all placeholder-ui-text/30 resize-none
-          ${error ? "border-2 border-ui-error bg-pink-500/5" : "border-ui-inner focus:border-ui-border focus:bg-ui-glass/50"}`}
+        className={`flex-1 text-xs md:text-sm text-ui-text bg-ui-inner border rounded-lg px-3 py-2.5 outline-none transition-all placeholder-ui-text/30 resize-none
+          ${error ? "border-2 border-ui-error bg-pink-500/5" : "border-ui-border focus:border-ui-border focus:bg-ui-glass/50"}`}
       />
       {error && (
         <span className="text-[10px] md:text-xs font-bold text-ui-error mt-1 pl-1 animate-in fade-in">

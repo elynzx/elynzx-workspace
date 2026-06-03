@@ -4,7 +4,6 @@ import {
   GithubLogoIcon,
   CaretLeftIcon,
   CaretRightIcon,
-  BlueprintIcon,
   MagnifyingGlassPlusIcon,
 } from "@phosphor-icons/react";
 import type { ProjectItem } from "../../../data/projectsData";
@@ -33,19 +32,19 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="flex flex-col xl:flex-row gap-8 xl:gap-10 w-full border-b border-ui-inner pb-16 last:border-b-0 last:pb-0 items-start transition-colors duration-300">
-      <div className="flex flex-col items-start gap-6 w-full xl:w-80 text-ui-text text-left shrink-0">
+    <div className="flex flex-col xl:flex-row gap-8 xl:gap-10 w-full border-b border-ui-glass pt-8 md:pt-4 pb-12 md:pb-16 last:border-b-0 last:pb-0 items-start transition-colors duration-300">
+      <div className="flex flex-col gap-3 md:gap-6 w-full xl:w-80 text-ui-text text-left shrink-0">
         <div className="flex flex-col w-full">
-          <div className="flex flex-wrap items-center gap-2 mb-3">
-            <h4 className="text-3xl font-black text-ui-text m-0 drop-shadow-[0_0_8px_rgba(246,155,195,0.3)]">
+          <div className="flex flex-col md:flex-wrap items-center justify-center md:justify-start md:items-start gap-2 mb-3">
+            <h4 className="text-3xl font-black text-ui-text drop-shadow-[0_0_8px_rgba(246,155,195,0.3)]">
               {name}
             </h4>
-            <span className="text-[11px] text-ui-accent font-extrabold px-2.5 py-1 rounded-md border border-ui-accent/40 tracking-wider uppercase">
+            <span className="text-[11px] w-full text-center md:text-left text-ui-accent font-extrabold py-1.5 md:py-2 border-b border-ui-accent/40 tracking-wider uppercase">
               {scope}
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-1.5 mt-4 select-none">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 mt-3 md:mt-2 select-none">
             {techTags.map((tech) => (
               <span
                 key={tech}
@@ -56,7 +55,7 @@ export const ProjectCard = ({
             ))}
           </div>
 
-          <p className="text-sm md:text-base text-ui-text/90 leading-relaxed text-justify font-medium mt-4 w-full">
+          <p className="text-sm md:text-base text-ui-text/90 leading-relaxed text-justify font-medium mt-6 md:mt-4 w-full">
             {desc}
           </p>
         </div>
@@ -66,7 +65,7 @@ export const ProjectCard = ({
             href={liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-4.5 rounded-2xl bg-pink-400 text-white font-bold text-xs border border-white/20 shadow-md hover:scale-[1.03] active:scale-98 transition-all cursor-pointer group"
+            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4 rounded-2xl bg-pink-400 text-white font-bold text-sm border border-white/20 shadow-md hover:scale-[1.03] active:scale-98 transition-all cursor-pointer group"
           >
             <ArrowSquareOutIcon size={16} weight="bold" />
             <span>Live Demo</span>
@@ -75,7 +74,7 @@ export const ProjectCard = ({
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-4.5 rounded-2xl bg-ui-glass/40 text-ui-text font-bold text-xs border border-ui-inner hover:text-white hover:border-transparent hover:scale-[1.03] active:scale-98 transition-all cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4.5 rounded-2xl bg-ui-glass/50 text-ui-text font-bold text-sm md:text-xs border border-ui-inner shadow-md  hover:text-white hover:border-transparent hover:scale-[1.03] active:scale-98 transition-all cursor-pointer"
           >
             <GithubLogoIcon size={16} weight="fill" />
             <span>Repository</span>
@@ -84,7 +83,7 @@ export const ProjectCard = ({
       </div>
 
       <div className="flex-1 w-full flex flex-col gap-4 relative group">
-        <div className="w-full h-72 sm:h-120 bg-white rounded-xl border border-ui-inner overflow-hidden relative shadow-inner flex items-center justify-center group/canvas transition-colors duration-300">
+        <div className="w-full h-65 sm:h-118 bg-white rounded-xl border border-ui-inner overflow-hidden relative shadow-inner flex items-center justify-center group/canvas transition-colors duration-300">
           <button
             onClick={() => setIsZoomed(true)}
             className="w-full h-full p-4 flex items-center justify-center relative group/img focus:outline-none cursor-zoom-in overflow-hidden"
@@ -128,7 +127,7 @@ export const ProjectCard = ({
           </div>
         </div>
 
-        <div className="w-full p-4 rounded-xl flex flex-col gap-2 items-center text-center transition-colors duration-300 bg-ui-inner">
+        <div className="w-full h-40 md:h-auto p-4 rounded-xl flex flex-col gap-2 items-center text-center transition-colors duration-300 bg-ui-inner">
           <div className="flex items-center gap-2 text-ui-accent font-code font-black text-xs uppercase tracking-widest rounded-xl shrink-0">
             {activeSlide.label}
           </div>

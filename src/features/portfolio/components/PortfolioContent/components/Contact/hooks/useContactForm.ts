@@ -17,9 +17,15 @@ const EMAILJS_CONFIG = {
 
 export const useContactForm = () => {
   const [showModal, setShowModal] = useState(false);
-  
-  const { control, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ContactData>({
+
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactData>({
     defaultValues: { firstName: "", email: "", message: "" },
+    mode: "onChange",
   });
 
   const sendEmail = async (data: ContactData) => {
@@ -30,8 +36,18 @@ export const useContactForm = () => {
         message: data.message,
       };
 
-      await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_USER, commonParams, EMAILJS_CONFIG.PUBLIC_KEY);
-      await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ME, commonParams, EMAILJS_CONFIG.PUBLIC_KEY);
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_USER,
+        commonParams,
+        EMAILJS_CONFIG.PUBLIC_KEY,
+      );
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ME,
+        commonParams,
+        EMAILJS_CONFIG.PUBLIC_KEY,
+      );
 
       setShowModal(true);
       reset();

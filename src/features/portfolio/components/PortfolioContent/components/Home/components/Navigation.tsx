@@ -1,7 +1,7 @@
 import { HOME_TABS, type HomeTab } from "../data/homeTabsData";
 import { useHomeTabStore } from "../store/useHomeTabStore";
 
-export const HomeNavigation = () => {
+export const Navigation = () => {
   const { activeTab, setActiveTab, setTabClicked } = useHomeTabStore();
 
   const handleTabChange = (id: HomeTab) => {
@@ -10,7 +10,7 @@ export const HomeNavigation = () => {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 p-1 bg-ui-inner border border-ui-border rounded-xl w-fit select-none mr-6">
+    <div className="flex flex-wrap gap-2 p-1 bg-ui-inner border border-ui-border rounded-xl w-fit select-none md:mr-6">
       {HOME_TABS.map(({ id, label, Icon }) => {
         const isActive = activeTab === id;
         return (

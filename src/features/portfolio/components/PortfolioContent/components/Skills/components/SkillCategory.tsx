@@ -1,19 +1,18 @@
+import { CaretDownIcon, CircleIcon } from "@phosphor-icons/react";
 import { useState } from "react";
-import { CircleIcon, CaretDownIcon } from "@phosphor-icons/react";
-import { SKILLS_DATA } from "../../data/skillsData";
-import { SkillCard } from "./components/SkillCard";
+import { SkillCard } from "./SkillCard";
 
-interface SkillCategoryBlockProps {
+interface SkillCategoryProps {
   category: string;
   items: Array<{ name: string; details: string }>;
   defaultOpen?: boolean;
 }
 
-const SkillCategoryBlock = ({
+export const SkillCategory = ({
   category,
   items,
   defaultOpen = false,
-}: SkillCategoryBlockProps) => {
+}: SkillCategoryProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -57,21 +56,6 @@ const SkillCategoryBlock = ({
           ))}
         </div>
       )}
-    </div>
-  );
-};
-
-export const SkillsView = () => {
-  return (
-    <div className="flex flex-col gap-5 animate-in fade-in duration-300 w-full pb-8">
-      {Object.entries(SKILLS_DATA).map(([category, items], index) => (
-        <SkillCategoryBlock
-          key={category}
-          category={category}
-          items={items}
-          defaultOpen={index === 0}
-        />
-      ))}
     </div>
   );
 };
