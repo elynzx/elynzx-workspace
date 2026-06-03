@@ -6,32 +6,29 @@ export const ABOUT_DATA = {
     title: "Home",
     subtitle: "SYSTEMS ENGINEERING // PRE-PROFESSIONAL INTERN",
     name: "Evelyn",
-    role: "Systems Engineering Student",
+    role: "Software developer | ui designer",
     description:
       "Systems Engineering student bridging technical logic with user-focused solutions, actively growing through hands-on practice.",
-    bio: "As a Systems Engineering student, my background in architecture taught me to love structure, planning, and attention to detail. Transitioning into technology allowed me to apply that exact same mindset to software logic, focusing on how entire systems connect from end to end. I deeply value clear communication, love learning from others, and enjoy sharing knowledge, which is why I actively support tech workshops for girls as a volunteer at IEEE WIE.",
-    academicHighlight:
-      "Ranked in the top 10% of the Systems Engineering Faculty. Advancing my programming skills through an intensive coding bootcamp.",
-    volunteerWork:
-      "Active volunteer at IEEE Women in Engineering (WIE UTP) STEM Academy, helping organize and facilitate STEM school workshops & live media interviews.",
+    bio: "My journey into technology began with a background in architecture, where I first learned to appreciate the value of solid foundations, blueprint planning, and detail-oriented design. Transitioning into engineering felt like a natural evolution, allowing me to apply that exact structural mindset to software development and fuel my fascination with how complex systems connect from end to end. By bridging rigorous technical logic with a creative edge, I am able to approach full-stack challenges with a unique perspective, always striving to understand the complete product lifecycle. I'm eager to bring this collaborative, cross-functional mindset to a high-performing team, where I can master the stack, contribute meaningfully across the entire development workflow, and deliver reliable solutions together.",
+
     status:
       "Available for Pre-Professional Internships (Full-Time / Part-Time)",
     profileSlides: [
       {
         url: ProfilePhoto,
         badge: "Evelyn Pascual",
-        caption: "Systems Engineering Intern canvas"
+        caption: "Systems Engineering Intern canvas",
       },
       {
         url: "RUTA",
         badge: "IEEE WIE Volunteer",
-        caption: "Facilitating tech and STEM workshops for girls"
+        caption: "Facilitating tech and STEM workshops for girls",
       },
       {
-        url: "RUTA", 
+        url: "RUTA",
         badge: "Tech Networking",
-        caption: "Connecting with engineering professionals and mentors"
-      }
+        caption: "Connecting with engineering professionals and mentors",
+      },
     ],
 
     images: {
@@ -41,8 +38,8 @@ export const ABOUT_DATA = {
     credentials: [
       "TOEIC Certified – B2 Professional Working Proficiency",
       "Top 10% Academic Merit Rank – UTP Faculty of Engineering",
-      "IEEE WIE Volunteer – STEM Workshop Organizer & Facilitator",
-      "Full-Stack Web Development – In Progress (Bootcamp)",
+      "Full-Stack Web Development – In Progress (Tecsup Bootcamp)",
+      "IEEE WIE Volunteer – Facilitating STEM school workshops for girls",
     ],
   },
   education: [
