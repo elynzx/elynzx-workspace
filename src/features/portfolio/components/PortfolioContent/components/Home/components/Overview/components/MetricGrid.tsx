@@ -20,8 +20,8 @@ const METRICS_DATA: MetricItem[] = [
     theme: "pink",
     icon: <CompassIcon size={17} weight="bold" />,
     category: "methodology",
-    title: "Ground-Up Development",
-    desc: "Blueprint planning & modular development.",
+    title: "End-to-End Development",
+    desc: "SDLC planning & modular full-stack architecture.",
   },
   {
     id: "02",
@@ -29,7 +29,7 @@ const METRICS_DATA: MetricItem[] = [
     icon: <MedalIcon size={17} weight="bold" />,
     category: "academic",
     title: "Top 10% Class Rank",
-    desc: "Systems Engineering student at UTP.",
+    desc: "Systems Eng. student at Technological University of Peru.",
   },
   {
     id: "03",

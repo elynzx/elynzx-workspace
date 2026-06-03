@@ -1,7 +1,6 @@
 import {
   StarIcon,
   SparkleIcon,
-  DownloadSimpleIcon,
 } from "@phosphor-icons/react";
 import ProfilePhoto from "../../assets/ProfilePhoto/Profile_02.png";
 import PaperClip from "../../assets/stickers/paperClip.png";
@@ -14,19 +13,19 @@ import Stars from "../../assets/stickers/loading.png";
 import { motion } from "motion/react";
 
 const idData = {
-  season: "TERM 08",
+  season: "SEMESTER 08",
   greeting: "STATUS : AVAILABLE",
-  role: "Software Eng. Student",
+  role: "Software Developer & UI Designer",
   photo: ProfilePhoto,
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
   },
   details: [
-    { label: "Engineer", value: "Evelyn Pascual" },
+    { label: "Identity", value: "Evelyn Pascual" },
     { label: "Tech Stack", value: "React • Java • Python" },
-    { label: "Execution", value: "Full SDLC Ownership", hideOnMobile: true },
-    { label: "Objective", value: "Seeking Internship", isOnline: true },
+    { label: "Major", value: "Information Systems Engineering", hideOnMobile: true },
+    { label: "Next Step", value: "Seeking Internship", isOnline: true },
   ],
 };
 
@@ -139,35 +138,23 @@ export const IdCard = () => {
             ))}
           </div>
 
-          <div className="flex w-full items-center gap-3 mt-2.5 md:mt-4">
+          <div className="flex w-full items-center justify-end gap-4 mt-2.5 md:mt-5">
             <a
-              href="/Evelyn_Pascual_Resume.pdf"
-              download="Evelyn_Pascual_Resume.pdf"
-              className="flex-1 bg-pink-400/90 hover:bg-pink-400 text-[12px] text-white font-black text-sm rounded-2xl py-2 md:py-3 flex items-center justify-center gap-1.5 cursor-pointer animate-pulse uppercase"
-              onClick={(e) => e.stopPropagation()}
-              title="Download Evelyn Pascual Resume PDF"
+              href={idData.socials.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 bg-gray-50 border border-pink-100 rounded-xl text-gray-400 hover:text-pink-400 transition-all shadow-2xs"
             >
-              <DownloadSimpleIcon size={16} weight="bold" />
-              <span>Resume</span>
+              <FaGithub className="text-lg md:text-xl" />
             </a>
-            <div className="flex justify-center items-center gap-2">
-              <a
-                href={idData.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 bg-gray-50 border border-pink-100 rounded-xl text-gray-400 hover:text-pink-400 transition-all shadow-2xs"
-              >
-                <FaGithub className="text-lg md:text-xl" />
-              </a>
-              <a
-                href={idData.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 bg-gray-50 border border-sky-100 rounded-xl text-gray-400 hover:text-sky-400 transition-all shadow-2xs"
-              >
-                <FaLinkedin className="text-lg md:text-xl" />
-              </a>
-            </div>
+            <a
+              href={idData.socials.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 bg-gray-50 border border-sky-100 rounded-xl text-gray-400 hover:text-sky-400 transition-all shadow-2xs"
+            >
+              <FaLinkedin className="text-lg md:text-xl" />
+            </a>
           </div>
         </div>
       </div>

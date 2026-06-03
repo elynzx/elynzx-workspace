@@ -1,13 +1,10 @@
 import {
-  IdentificationCardIcon,
-  UsersIcon,
-  BookmarkSimpleIcon,
   SparkleIcon,
 } from "@phosphor-icons/react";
 import { ABOUT_DATA } from "../../../data/aboutData";
 
 export const Biography = () => {
-  const { bio, academicHighlight, volunteerWork, status, credentials } =
+  const { bio, credentials } =
     ABOUT_DATA.about;
 
   return (
@@ -30,43 +27,6 @@ export const Biography = () => {
       <p className="text-sm md:text-base text-justify font-medium leading-relaxed text-ui-text/90">
         {bio}
       </p>
-
-      <div className="flex flex-col gap-3 bg-ui-inner border border-ui-inner p-4 rounded-lg md:rounded-2xl shadow-inner mt-2 text-left transition-colors duration-300">
-        <div className="flex items-start gap-3 text-xs md:text-sm">
-          <IdentificationCardIcon
-            size={20}
-            className="text-[#F69BC3] shrink-0 mt-0.5"
-            weight="fill"
-          />
-          <p className="font-medium text-ui-text/90">
-            <span className="text-ui-accent font-extrabold">
-              Academic Rank:
-            </span>{" "}
-            {academicHighlight}
-          </p>
-        </div>
-        <div className="flex items-start gap-3 text-xs md:text-sm border-t border-dashed border-ui-inner pt-2.5">
-          <UsersIcon
-            size={20}
-            className="text-[#F69BC3] shrink-0 mt-0.5"
-            weight="fill"
-          />
-          <p className="font-medium text-ui-text/90">
-            <span className="text-ui-accent font-extrabold">Community:</span>{" "}
-            {volunteerWork}
-          </p>
-        </div>
-        <div className="flex items-start gap-3 text-xs md:text-sm border-t border-dashed border-ui-inner pt-2.5">
-          <BookmarkSimpleIcon
-            size={20}
-            className="text-[#F69BC3] shrink-0 mt-0.5"
-            weight="fill"
-          />
-          <p className="font-extrabold text-ui-accent tracking-wide animate-pulse">
-            {status}
-          </p>
-        </div>
-      </div>
 
       {credentials && credentials.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-3 w-full justify-start select-none">
