@@ -27,17 +27,18 @@
   --ui-inner: rgba(128, 128, 128, 0.103);
   --ui-accent: var(--color-pink-300);
   --ui-sky: var(--color-sky-300);
-  --ui-border: rgba(255, 255, 255, 0.089);
+  --ui-border: rgba(255, 255, 255, 0.212);
+  --ui-error: rgba(255, 27, 134, 0.568);
 }
 
 .light {
   --ui-text: #ffffff;
-  --ui-glass: rgba(18, 10, 90, 0.486);
-  --ui-inner: rgba(52, 27, 83, 0.212);
-  --ui-border: rgba(247, 247, 247, 0.322);
-  --ui-accent: rgb(255, 255, 255);
+  --ui-glass: rgba(44, 20, 99, 0.459);
+  --ui-inner: rgba(59, 5, 80, 0.137);
+  --ui-border: rgba(255, 255, 255, 0.438);
+  --ui-accent: rgb(255, 172, 220);
   --ui-sky: var(--color-sky-600);
-  --ui-error: rgba(18, 10, 90, 0.568);
+  --ui-error: rgba(255, 199, 225, 0.568);
 }
 body {
   min-width: 320px;

@@ -1,47 +1,103 @@
 @layer utilities {
-    /* Keyframes */
+  /* Keyframes */
 
-    @keyframes galaxyPulse {
-        0%,
-        100% {
-            transform: scale(1);
-            opacity: 0.8;
-        }
-        50% {
-            transform: scale(1.2);
-            opacity: 1;
-        }
+  @keyframes galaxyPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.8;
     }
-
-    @keyframes twinkle {
-        0%,
-        100% {
-            opacity: 0.2;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 1;
-            transform: scale(1.2);
-        }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
     }
+  }
 
-    /* Utility classes */
-
-    .animate-galaxy {
-        background:
-            radial-gradient(circle at 15% 15%, #b47693 4%, transparent 6%),
-            radial-gradient(circle at 50% 12%, #ac7691 2%, transparent 12%),
-            radial-gradient(circle at 18% 55%, #c26691 0%, transparent 10%),
-            radial-gradient(circle at 48% 45%, #ffffff 0%, transparent 8%),
-            radial-gradient(circle at 28% 45%, #ffffff 0%, transparent 6%),
-            radial-gradient(circle at 48% 52%, #9b4f72 4%, transparent 18%),
-            #c283a6;
-
-        background-size: 150% 150%;
-        animation: galaxyPulse 10s ease-in-out infinite;
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
     }
-
-    .animate-twinkle {
-        animation: twinkle var(--star-duration, 3s) ease-in-out infinite;
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
     }
+  }
+
+  @keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    5.4% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    7.2% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    9% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    11.7% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    13.5% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    18% {
+      transform: scale3d(1, 1, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  /* Utility classes */
+
+  .animate-galaxy {
+    background:
+      radial-gradient(circle at 15% 15%, #b47693 4%, transparent 6%),
+      radial-gradient(circle at 50% 12%, #ac7691 2%, transparent 12%),
+      radial-gradient(circle at 18% 55%, #c26691 0%, transparent 10%),
+      radial-gradient(circle at 48% 45%, #ffffff 0%, transparent 8%),
+      radial-gradient(circle at 28% 45%, #ffffff 0%, transparent 6%),
+      radial-gradient(circle at 48% 52%, #9b4f72 4%, transparent 18%), #c283a6;
+
+    background-size: 150% 150%;
+    animation: galaxyPulse 10s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle var(--star-duration, 3s) ease-in-out infinite;
+  }
+  .jello-horizontal {
+    animation: jello-horizontal 0.4s both;
+  }
+  .jello-vertical {
+    animation: jello-vertical 5s infinite;
+  }
 }
