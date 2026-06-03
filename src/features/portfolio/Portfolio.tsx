@@ -34,9 +34,8 @@ export const Portfolio = () => {
         boxShadow: "0px 5px 50px rgba(20, 10, 40, 0.4)",
       }}
       className={`${zIndex}
-        fixed flex flex-col overflow-hidden pointer-events-auto select-none bg-ui-glass/40 border border-ui-border ring-1 ring-ui-border backdrop-blur-3xl 
-        h-[82%] w-[92%] max-w-full rounded-2xl md:w-[92%] md:max-w-7xl md:h-175
-        md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-[52%] 
+        fixed flex flex-col overflow-hidden pointer-events-auto select-none bg-ui-glass/40 ring-1 ring-ui-border backdrop-blur-3xl 
+        h-[82%] w-[92%] max-w-full rounded-2xl md:w-[92%] shadow-[0_15px_30px_rgba(122,100,223,0.10)]    md:max-w-7xl md:h-175 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-[52%] 
         transition-shadow duration-300
       `}
     >

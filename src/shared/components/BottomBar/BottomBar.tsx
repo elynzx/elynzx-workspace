@@ -8,7 +8,7 @@ export const BottomBar = () => {
     <div className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[85%] sm:w-[65%] md:w-auto">
       <div
         className="flex items-center justify-center gap-3 md:gap-6 px-4 md:px-18 py-2 md:py-3 bg-ui-glass/20
-        backdrop-blur-2xl border border-ui-border rounded-3xl md:rounded-full shadow-[0_20px_50px_rgba(122,100,223,0.25)] 
+        backdrop-blur-2xl rounded-3xl md:rounded-full shadow-[0_15px_30px_rgba(122,100,223,0.10)] 
         ring-1 ring-ui-border"
       >
         {dockItems.map((item) => (
