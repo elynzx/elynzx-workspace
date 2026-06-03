@@ -20,7 +20,7 @@ export const MenuDropdown = ({
   systemSpecs,
 }: Props) => {
   return (
-    <div className="relative flex items-center gap-4">
+    <div className="relative md:flex items-center gap-4 hidden">
       {(["contact", "info"] as const).map((type) => {
         const isBtnActive = activeDropdown === type;
         return (

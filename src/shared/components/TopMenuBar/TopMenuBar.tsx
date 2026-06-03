@@ -34,7 +34,7 @@ export const TopMenuBar = () => {
         />
 
         <span className="font-semibold tracking-wider text-ui-text text-lg w-45">
-        {activeAppName}
+          {activeAppName}
         </span>
 
         <MenuDropdown
@@ -53,6 +53,7 @@ export const TopMenuBar = () => {
           onToggleSpecs={() => toggleApp("Specs")}
           onToggleTheme={toggleTheme}
           themeMode={themeMode}
+          time={timeString}
         />
         <DateTimeDisplay date={dateString} time={timeString} />
       </div>
