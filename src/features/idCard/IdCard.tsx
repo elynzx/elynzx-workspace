@@ -1,6 +1,4 @@
 import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
   StarIcon,
   SparkleIcon,
   DownloadSimpleIcon,
@@ -10,6 +8,10 @@ import PaperClip from "../../assets/stickers/paperClip.png";
 import { useDraggable } from "../../shared/hooks/useDraggable";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useWorkspaceStore } from "../../store/useWorkspaceStore";
+import { useEffect, useState } from "react";
+import Bunny01 from "../../assets/stickers/bunny01.svg";
+import Bunny02 from "../../assets/stickers/bunny02.svg";
+import Stars from "../../assets/stickers/loading.png";
 
 const idData = {
   season: "TERM 08",
@@ -22,7 +24,7 @@ const idData = {
   },
   details: [
     { label: "Engineer", value: "Evelyn Pascual" },
-    { label: "Tech Stack", value: "React • SpringBoot • Python" },
+    { label: "Tech Stack", value: "React • Java • Python" },
     { label: "Execution", value: "Full SDLC Ownership", hideOnMobile: true },
     { label: "Objective", value: "Seeking Internship", isOnline: true },
   ],
@@ -33,28 +35,37 @@ export const IdCard = () => {
   const activeApp = useWorkspaceStore((state) => state.activeApp);
   const focusApp = useWorkspaceStore((state) => state.focusApp);
   const zIndex = activeApp === "IdCard" ? "z-50" : "z-10";
-  const initialX = window.innerWidth > 768 ? window.innerWidth * 0.64 : 40;
-  const initialY = window.innerWidth > 768 ? window.innerHeight * 0.22 : 80;
+  const initialX = window.innerWidth > 768 ? window.innerWidth * 0.65 : 40;
+  const initialY = window.innerWidth > 768 ? window.innerHeight * 0.22 : 0;
+  const [isFirstFrame, setIsFirstFrame] = useState(true);
 
   const { positionStyle, handleMouseDown, handleTouchStart, isDragging } =
     useDraggable({ x: initialX, y: initialY });
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFirstFrame((prev) => !prev);
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   if (!isAppOpen.IdCard) return null;
-  
+
   return (
     <div
       onClick={() => focusApp("IdCard")}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       style={window.innerWidth > 768 ? positionStyle : undefined}
-      className={`${zIndex} cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-85 md:max-w-lg py-4 md:py-6 px-4 md:px-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col overflow-hidden pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
+      className={`${zIndex} mt-48 ml-3 md:ml-0 md:mt-0 cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-95 md:max-w-lg p-5 md:p-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col  pointer-events-auto select-none transition-shadow duration-150 active:cursor-grabbing rotate-3 ${
         isDragging ? "shadow-[0_30px_70px_rgba(244,63,94,0.3)]" : ""
       }`}
     >
       <div className="flex flex-col items-center w-full gap-1.5 mb-2.5 md:mb-4">
         <div className="w-10 h-2 md:h-4 md:w-14 bg-[#9b6d8a] rounded-full border border-pink-300 shadow-inner" />
-        <div className="text-pink-400 font-code flex justify-between items-center w-full uppercase font-bold text-[11px] tracking-widest py-2">
-          <div className="flex items-center gap-1">
+        <div className="text-pink-400 font-code flex justify-between items-center w-full uppercase font-black text-[11px] tracking-widest py-2">
+          <div className="flex items-center gap-2 md:text-sm ">
             <StarIcon
               size={10}
               weight="fill"
@@ -62,7 +73,7 @@ export const IdCard = () => {
             />
             <p>{idData.season}</p>
           </div>
-          <div className="flex items-center gap-1 text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded-md border border-sky-100 font-bold animate-pulse">
+          <div className="flex items-center gap-1 text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded-md border border-sky-100">
             <span>{idData.greeting}</span>
           </div>
         </div>
@@ -81,7 +92,12 @@ export const IdCard = () => {
           <img
             src={PaperClip}
             alt=""
-            className="absolute -top-3 -right-4 w-10 md:w-17 pointer-events-none drop-shadow-md select-none animate-bounce"
+            className="absolute -top-6 -right-4 md:-top-6 md:-right-6 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
+          />
+          <img
+            src={Stars}
+            alt="Animated star"
+            className="absolute -top-6 -right-4 md:top-55 md:-left-6 rotate-30 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
           />
         </div>
 
@@ -100,7 +116,7 @@ export const IdCard = () => {
             <div className="w-full h-0.5 bg-linear-to-r from-pink-200 via-sky-200 to-transparent mt-1 mb-1.5 md:mb-2" />
           </div>
 
-          <div className="flex flex-col gap-1.5 md:gap-3 py-0.5">
+          <div className="flex flex-col gap-1.5 md:gap-3 py-0.5 mt-2 md:mt-0">
             {idData.details.map((info, idx) => (
               <div
                 key={idx}
@@ -123,12 +139,11 @@ export const IdCard = () => {
             ))}
           </div>
 
-          <div className="flex w-full items-center gap-3 mt-4">
+          <div className="flex w-full items-center gap-3 mt-2.5 md:mt-4">
             <a
               href="/Evelyn_Pascual_Resume.pdf"
               download="Evelyn_Pascual_Resume.pdf"
-              className="flex-1 bg-pink-400/90 hover:bg-pink-400 text-white 
-              font-black text-sm rounded-2xl py-3 flex items-center justify-center gap-1.5 cursor-pointer animate-pulse"
+              className="flex-1 bg-pink-400/90 hover:bg-pink-400 text-[12px] text-white font-black text-sm rounded-2xl py-2 md:py-3 flex items-center justify-center gap-1.5 cursor-pointer animate-pulse uppercase"
               onClick={(e) => e.stopPropagation()}
               title="Download Evelyn Pascual Resume PDF"
             >
@@ -156,6 +171,11 @@ export const IdCard = () => {
           </div>
         </div>
       </div>
+      <img
+        src={isFirstFrame ? Bunny01 : Bunny02}
+        alt="Animated bunny"
+        className="absolute w-30 h-auto -top-22 right-14 md:-top-20 md:w-30 md:right-25 md:h-auto z-50 pointer-events-none "
+      />
     </div>
   );
 };
