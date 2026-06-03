@@ -84,7 +84,7 @@ export const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 rounded-2xl bg-pink-400 text-white font-bold text-sm border border-white/20 shadow-md hover:scale-[1.05] active:scale-98 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-8 py-3 rounded-xl bg-pink-400 text-white font-bold text-sm border border-white/20 shadow-md hover:scale-[1.05] active:scale-98 transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Sending..." : "Send Mail ♡"}
             </button>
