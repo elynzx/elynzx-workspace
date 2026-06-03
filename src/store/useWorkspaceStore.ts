@@ -4,9 +4,7 @@ export type AppName =
   | "IdCard"
   | "Portfolio"
   | "Music"
-  | "Tasks"
-  | "Specs"
-  | "Contact";
+  | "Tasks";
 
 export type ThemeMode = "dark" | "light";
 
@@ -26,8 +24,6 @@ export const useWorkspaceStore = create<WorkspaceState>((set) => ({
     Portfolio: true,
     Music: false,
     Tasks: false,
-    Specs: false,
-    Contact: false,
   },
   activeApp: "IdCard",
   themeMode: (localStorage.getItem("theme") as ThemeMode) || "dark",
