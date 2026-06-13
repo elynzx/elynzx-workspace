@@ -9,7 +9,7 @@ export const SKILLS_DATA = {
       { name: "Spring Boot 3", details: "Spring Data JPA, Hibernate, RESTful Web APIs, Data Validation (DTOs)" },
       { name: "JWT Security", details: "Token-Based Auth Filters, BCrypt Hashing, Role-Based Endpoint Guards" },
       { name: "Supabase & SQL", details: "PostgreSQL & MySQL Ecosystem, Row Level Security (RLS)" },
-      { name: "Python Core", details: "Core Programming, Basic Data Structures" },
+      { name: "Python", details: "Flask, Core Programming, Basic Data Structures" },
     ],
     tools: [
       { name: "Virtualization", details: "Virtualization & Containerization Fundamentals" },

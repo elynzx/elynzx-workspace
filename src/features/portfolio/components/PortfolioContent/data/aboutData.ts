@@ -6,10 +6,10 @@ export const ABOUT_DATA = {
     title: "Home",
     subtitle: "SYSTEMS ENGINEERING // PRE-PROFESSIONAL INTERN",
     name: "Evelyn",
-    role: "Software developer | ui designer",
+    role: "Systems Engineering Student",
     description:
       "Systems Engineering student bridging technical logic with user-focused solutions, actively growing through hands-on practice.",
-    bio: "My journey into technology began with a background in architecture, where I first learned to appreciate the value of solid foundations, blueprint planning, and detail-oriented design. Transitioning into engineering felt like a natural evolution, allowing me to apply that exact structural mindset to software development and fuel my fascination with how complex systems connect from end to end. By bridging rigorous technical logic with a creative edge, I am able to approach full-stack challenges with a unique perspective, always striving to understand the complete product lifecycle. I'm eager to bring this collaborative, cross-functional mindset to a high-performing team, where I can master the stack, contribute meaningfully across the entire development workflow, and deliver reliable solutions together.",
+    bio: "I'm Evelyn Pascual, a <b>Systems Engineering student</b> based in Peru, seeking a pre-professional <b>Internship</b> in tech. I'm deeply enthusiastic about software development, focusing my growth on building reliable web solutions as an aspiring <b>Full-Stack Developer</b>.<br/><br/>My journey into technology began with a background in architecture, where I learned to appreciate solid foundations, blueprint planning, and detail-oriented design. As a continuous learner, transitioning into engineering felt like a natural evolution, allowing me to apply that structural mindset to software while adopting <b>good programming practices</b> to write thoughtful code. I'm eager to bring this growth-oriented mindset to a team where I can learn from experienced developers and contribute to reliable solutions.",
 
     status:
       "Available for Pre-Professional Internships (Full-Time / Part-Time)",
