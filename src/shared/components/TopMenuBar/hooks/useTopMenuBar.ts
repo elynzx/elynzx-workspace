@@ -18,7 +18,7 @@ export const useTopMenuBar = () => {
 
   const getActiveAppName = () => {
     if (isAppOpen.Portfolio) return "My Portfolio";
-    if (isAppOpen.Music) return "Music Player";
+    if (isAppOpen.MusicPlayer) return "AngelBeats Player";
     if (isAppOpen.Tasks) return "Beary Focused App";
 
     return "My Workspace";
