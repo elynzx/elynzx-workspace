@@ -1,67 +1,38 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
-
-interface ContactData {
-  firstName: string;
-  email: string;
-  message: string;
-}
-
-const EMAILJS_CONFIG = {
-  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  TEMPLATE_USER: import.meta.env.VITE_EMAILJS_TEMPLATE_USER,
-  TEMPLATE_ME: import.meta.env.VITE_EMAILJS_TEMPLATE_ME,
-  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC,
-};
+import { sendContactForm, type ContactFormData } from "../service/sendContactForm";
 
 export const useContactForm = () => {
   const [showModal, setShowModal] = useState(false);
 
   const {
     control,
+    register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactData>({
+  } = useForm<ContactFormData>({
     defaultValues: { firstName: "", email: "", message: "" },
     mode: "onChange",
   });
 
-  const sendEmail = async (data: ContactData) => {
+  const processSubmit = async (data: ContactFormData) => {
     try {
-      const commonParams = {
-        from_name: data.firstName,
-        reply_to: data.email,
-        message: data.message,
-      };
-
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_USER,
-        commonParams,
-        EMAILJS_CONFIG.PUBLIC_KEY,
-      );
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ME,
-        commonParams,
-        EMAILJS_CONFIG.PUBLIC_KEY,
-      );
-
+      await sendContactForm(data);
       setShowModal(true);
       reset();
     } catch (error) {
-      console.error("Emailjs integration failed:", error);
+      console.error("Failed to process contact form submit:", error);
     }
   };
 
   return {
     control,
+    register,
     errors,
     isSubmitting,
     showModal,
     closeModal: () => setShowModal(false),
-    onSubmit: handleSubmit(sendEmail),
+    onSubmit: handleSubmit(processSubmit),
   };
 };
