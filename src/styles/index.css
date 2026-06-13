@@ -16,6 +16,8 @@
   --color-ui-sky: var(--ui-sky);
   --color-ui-border: var(--ui-border);
   --color-ui-error: var(--ui-error);
+  --color-ui-button: var(--ui-button);
+  --color-ui-card: var(--ui-card);
 }
 
 :root {
@@ -24,21 +26,25 @@
   box-sizing: border-box;
   --ui-text: #ffffff;
   --ui-glass: rgba(0, 0, 0, 0.87);
-  --ui-inner: rgba(128, 128, 128, 0.103);
+  --ui-inner: rgba(24, 23, 23, 0.459);
   --ui-accent: var(--color-pink-300);
   --ui-sky: var(--color-sky-300);
-  --ui-border: rgba(255, 255, 255, 0.212);
+  --ui-border: rgba(255, 255, 255, 0.205);
   --ui-error: rgba(255, 27, 134, 0.568);
+  --ui-button: rgb(255, 95, 175);
+  --ui-card: #7e4c6c;
 }
 
 .light {
-  --ui-text: #ffffff;
-  --ui-glass: rgba(44, 20, 99, 0.459);
-  --ui-inner: rgba(59, 5, 80, 0.137);
-  --ui-border: rgba(255, 255, 255, 0.438);
-  --ui-accent: rgb(255, 172, 220);
+  --ui-text: rgb(24, 24, 24);
+  --ui-glass: rgba(255, 255, 255, 0.87);
+  --ui-inner: rgba(255, 255, 255, 0.541);
+  --ui-border: rgba(255, 255, 255, 0.767);
+  --ui-accent: rgba(255, 122, 195, 0.863);
   --ui-sky: var(--color-sky-600);
-  --ui-error: rgba(255, 199, 225, 0.568);
+  --ui-error: #ff78b7e0;
+  --ui-button: rgba(255, 131, 203, 0.747);
+  --ui-card: #ffeef8;
 }
 body {
   min-width: 320px;
