@@ -1,4 +1,4 @@
-import { SparkleIcon, XIcon } from "@phosphor-icons/react";
+import { FolderSimpleStarIcon, XIcon } from "@phosphor-icons/react";
 import type { DragControls } from "motion/react";
 
 interface PortfolioHeaderProps {
@@ -15,20 +15,20 @@ export const PortfolioHeader = ({
   return (
     <div
       onPointerDown={(e) => !isMobile && dragControls.start(e)}
-      className={`w-full h-14 flex items-center justify-between px-6 bg-ui-glass/40 shrink-0 select-none transition-colors duration-300 ${
+      className={`w-full h-14 flex items-center justify-between px-6 bg-ui-glass/30 shrink-0 select-none transition-colors duration-300 border-b border-ui-border ${
         isMobile
           ? "cursor-default"
           : "cursor-crosshair active:cursor-grabbing"
       }`}
     >
       <div className="flex items-center gap-3 text-ui-text pointer-events-none">
-        <span className="font-bold text-xs uppercase tracking-widest font-secondary opacity-90 flex items-center gap-1.5 text-ui-text">
-          <SparkleIcon
-            size={12}
+        <span className="font-bold text-xs uppercase tracking-widest font-secondary opacity-90 flex items-center gap-3.5 text-ui-text">
+          <FolderSimpleStarIcon
+            size={22}
             weight="fill"
             className="animate-pulse text-ui-accent"
-          />{" "}
-          Explorer ♡ My Portfolio ♡
+          />
+          My Portfolio
         </span>
       </div>
 

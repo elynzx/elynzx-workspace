@@ -37,10 +37,10 @@ export const PortfolioSidebar = ({
 
   return (
     <div
-      className={`w-full border-b md:border-b-0 md:border-r border-white/20 p-3 md:p-4 grid grid-cols-4 md:flex md:flex-col gap-2 shrink-0 transition-all duration-300 ${containerSizing}`}
+      className={`w-full border-b md:border-b-0 md:border-r border-ui-border p-3 md:p-4 grid grid-cols-4 md:flex md:flex-col gap-2 shrink-0 transition-all duration-300 ${containerSizing}`}
     >
       <div
-        className={`hidden md:block text-[11px] text-ui-text  uppercase tracking-widest font-black px-2.5 mb-2 truncate transition-opacity duration-300 ${headerVisibility}`}
+        className={`hidden md:block text-[11px] text-ui-text  uppercase tracking-widest px-2.5 mb-2 truncate transition-opacity duration-300 font-bold ${headerVisibility}`}
       >
         Navigation
       </div>
@@ -48,8 +48,8 @@ export const PortfolioSidebar = ({
       {NAVIGATION.map(({ id, label, Icon }) => {
         const isTabActive = activeTab === id;
         const tabButtonStyles = isTabActive
-          ? "bg-pink-400 text-ui-text border-white/20 shadow-md scale-[1.02]"
-          : "bg-white/15 border-transparent text-ui-text/80 hover:bg-white/[0.15] hover:text-white hover:scale-[1.01]";
+          ? "bg-ui-button text-white border-ui-border/50 shadow-md scale-[1.02]"
+          : "bg-white/15 border-transparent text-ui-text/80 hover:bg-white/[0.15] hover:text-ui-text hover:scale-[1.01]";
 
         return (
           <button
