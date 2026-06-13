@@ -9,9 +9,9 @@ interface Props {
 
 export const DockItem = ({ label, Icon, isActive, onToggle }: Props) => {
   const buttonStyle = isActive
-    ? "bg-pink-400 text-white shadow-lg border border-white/10"
-    : "bg-white/10 text-white hover:bg-[#F69BC3] hover:text-white";
-
+    ? "bg-ui-button text-white shadow-lg "
+    : "bg-white/10 text-white hover:bg-ui-button hover:text-white";
+                                                                      
   return (
     <button
       onClick={onToggle}
