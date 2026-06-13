@@ -10,7 +10,7 @@ export const LightBackground = () => {
   });
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#786ac7]">
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#b6ade6] md:bg-[#8c7ed6]">
       <div className="absolute top-[-5%] left-[-5%] w-[30vw] h-[30vw] rounded-full bg-[#5cbcf6] opacity-80 blur-[75px] mix-blend-screen animate-pulse duration-[8s]" />
       <div className="absolute top-[2%] left-[20%] w-[32vw] h-[32vw] rounded-full bg-[#ff9ebb] opacity-100 blur-[65px] mix-blend-screen animate-pulse duration-[6s]" />
       <div className="absolute top-[-5%] left-[45%] w-[28vw] h-[28vw] rounded-full bg-[#ff70a6] opacity-100 blur-[55px] mix-blend-screen" />
@@ -24,7 +24,7 @@ export const LightBackground = () => {
       <div className="absolute bottom-[20%] left-[5%] w-[25vw] h-[25vw] rounded-full bg-[#ff54b2] opacity-100 blur-[55px] mix-blend-screen" />
       <div className="absolute bottom-[-8%] left-[-8%] w-[30vw] h-[30vw] rounded-full bg-[#b563ff] opacity-60 blur-[85px] mix-blend-screen" />
       <div className="absolute bottom-[5%] left-[25%] w-[25vw] h-[25vw] rounded-full bg-[#d8005a] opacity-[0.80] blur-[70px] mix-blend-screen" />
-      <div className="absolute bottom-[5%] right-[20%] w-[32vw] h-[32vw] rounded-full bg-[#ff4ba5] opacity-100 blur-[70px] mix-blend-screen animate-pulse duration-[5s]" />
+      <div className="absolute bottom-[5%] right-[20%] w-[32vw] h-[32vw] rounded-full bg-[#ff4ba5] opacity-100 blur-[70px] mix-blend-screen animate-twinkle duration-[5s]" />
       <div className="absolute bottom-[-8%] right-[-8%] w-[30vw] h-[30vw] rounded-full bg-[#0077b6] opacity-75 blur-[75px] mix-blend-screen" />
       <div className="absolute bottom-[10%] right-[2%] w-[28vw] h-[28vw] rounded-full bg-[#ff85a1] opacity-100 blur-[60px] mix-blend-screen" />
 
