@@ -13,7 +13,7 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col md:gap-7 w-full h-full text-ui-text animate-in fade-in transition-colors duration-300">
-      <section className="w-full relative overflow-hidden p-5 md:py-6 md:px-12 rounded-2xl bg-ui-glass/40 transition-all duration-300">
+      <section className="w-full relative overflow-hidden p-5 md:py-6 md:px-12 rounded-2xl bg-ui-inner/40 transition-all duration-300">
         <div className="w-full h-full flex flex-col md:grid md:grid-cols-3 md:gap-12">
           <div className="flex flex-col md:col-span-2 items-center gap-2 md:gap-3 w-full text-ui-text z-20">
             <Navigation />
@@ -39,11 +39,11 @@ export const Home = () => {
         </div>
       </section>
 
-      <div className="flex items-center justify-center gap-2 text-[12px] text-ui-text/70 tracking-widest uppercase select-none animate-pulse transition-colors duration-300">
+      <div className="flex items-center justify-center ">
         <a
           href="/Evelyn_Pascual_Resume.pdf"
           download="Evelyn_Pascual_Resume.pdf"
-          className="w-full text-white font-bold mt-4 md:mt-0 flex items-center justify-center gap-1.5  active:scale-98 hover:scale-[1.04] transition-all cursor-pointer"
+          className="w-full  font-bold mt-4 md:mt-0 flex items-center justify-center gap-1.5  active:scale-98 hover:scale-[1.04] cursor-pointer md:hidden text-[10px] text-ui-text/70 tracking-widest uppercase select-none animate-pulse transition-colors duration-300"
           onClick={(e) => e.stopPropagation()}
         >
           <DownloadSimpleIcon size={16} weight="bold" />

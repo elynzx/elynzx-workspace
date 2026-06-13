@@ -1,4 +1,4 @@
-import { SparkleIcon } from "@phosphor-icons/react";
+import { CaretDownIcon, CheckFatIcon, CheckIcon, SparkleIcon, StarIcon } from "@phosphor-icons/react";
 
 interface SkillCardProps {
   name: string;
@@ -9,16 +9,15 @@ export const SkillCard = ({ name, details }: SkillCardProps) => {
   const toolsArray = details.split(", ");
 
   return (
-    <div className="tracking-wider flex flex-col w-full p-4 rounded-xl bg-ui-inner/80 border border-ui-border hover:border-pink-300/50  hover:scale-[1.01] hover:shadow-md transition-all duration-200 group relative overflow-hidden text-left pointer-events-auto">
-
+    <div className="shadow-sm tracking-wider flex flex-col w-full p-4 rounded-xl bg-ui-inner/30 border border-ui-border hover:scale-[1.01] transition-all duration-200 group relative overflow-hidden text-left pointer-events-auto">
       <div className="flex justify-between items-center w-full mb-3 pl-1">
-        <span className="text-sm font-black text-ui-text/90 group-hover:text-ui-accent transition-colors tracking-wider">
+        <span className="text-sm font-black text-ui-text/90 group-hover:text-ui-accent transition-colors tracking-wider md:mb-2">
           {name}
         </span>
-        <SparkleIcon
+        <CheckFatIcon  
           size={12}
           weight="fill"
-          className="text-ui-text/10 group-hover:text-ui-accent group-hover:rotate-45 transition-all duration-300 transform"
+          className="text-ui-text/10 group-hover:text-ui-accent"
         />
       </div>
 
@@ -26,12 +25,12 @@ export const SkillCard = ({ name, details }: SkillCardProps) => {
         {toolsArray.map((tool) => (
           <span
             key={tool}
-            className="text-[13px] text-ui-text/90 leading-relaxed text-justify bg-ui-inner/30 border border-ui-border px-2.5 py-1 rounded-md shadow-2xs flex items-center gap-1 hover:bg-ui-glass/40 transition-all duration-150"
+            className="text-[13px] text-ui-text/90 leading-relaxed text-justify bg-ui-glass/40 px-2.5 py-1 rounded-md flex items-center gap-1.5 hover:bg-ui-glass/80 transition-all duration-150"
           >
-            <SparkleIcon
+            <StarIcon
               size={8}
               weight="fill"
-              className="text-pink-400 shrink-0"
+              className="text-ui-accent shrink-0"
             />
             {tool.trim()}
           </span>

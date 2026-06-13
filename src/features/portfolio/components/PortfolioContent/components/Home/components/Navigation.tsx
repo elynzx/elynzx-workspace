@@ -19,8 +19,8 @@ export const Navigation = () => {
             onClick={() => handleTabChange(id)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-code font-black text-[10px] tracking-wider uppercase transition-all duration-200 focus:outline-none ${
               isActive
-                ? "bg-white/20 text-white border border-white/20 shadow-sm"
-                : "text-white/50 hover:text-white/80 border border-transparent"
+                ? "bg-white/20 text-ui-text border border-white/20 shadow-sm"
+                : "text-ui-text/50 hover:text-white/80 border border-transparent"
             }`}
           >
             <Icon size={12} weight={isActive ? "fill" : "bold"} />

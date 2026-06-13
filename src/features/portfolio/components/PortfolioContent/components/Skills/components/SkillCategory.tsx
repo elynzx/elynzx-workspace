@@ -1,4 +1,4 @@
-import { CaretDownIcon, CircleIcon } from "@phosphor-icons/react";
+import { CaretDownIcon, CircleIcon, FolderSimpleStarIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { SkillCard } from "./SkillCard";
 
@@ -16,22 +16,22 @@ export const SkillCategory = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="flex flex-col w-full bg-ui-glass/30 border border-ui-inner rounded-2xl shadow-xs overflow-hidden transition-all duration-300 pointer-events-auto">
+    <div className="flex flex-col w-full border border-ui-border rounded-2xl shadow-sm overflow-hidden transition-all duration-300 pointer-events-auto">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`flex items-center justify-between w-full p-5 text-left focus:outline-none cursor-pointer transition-colors duration-200 ${
           isOpen
-            ? "bg-ui-glass/40 border-b border-ui-border"
-            : "hover:bg-ui-glass/40"
+            ? "bg-ui-inner"
+            : "hover:bg-ui-inner"
         }`}
       >
-        <div className="flex items-center gap-2.5">
-          <CircleIcon
-            size={8}
+        <div className="flex items-center justify-center gap-2.5 ">
+          <FolderSimpleStarIcon 
+            size={22}
             weight="fill"
             className={`text-ui-accent ${isOpen ? "animate-pulse" : ""}`}
           />
-          <h4 className="text-[11px] uppercase font-black tracking-widest text-ui-text/90 font-code">
+          <h4 className="text-[11px]  uppercase font-black tracking-widest text-ui-text/90 font-code">
             {category}
           </h4>
         </div>
@@ -46,7 +46,7 @@ export const SkillCategory = ({
       </button>
 
       {isOpen && (
-        <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4 items-start animate-in slide-in-from-top-3 fade-in duration-200">
+        <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4 items-start animate-in slide-in-from-top-3 fade-in duration-200 ">
           {items.map((skill) => (
             <SkillCard
               key={skill.name}

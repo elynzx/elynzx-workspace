@@ -65,7 +65,7 @@ export const ProjectCard = ({
             href={liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4 rounded-2xl bg-pink-400 text-white font-bold text-sm border border-white/20 shadow-md hover:scale-[1.03] active:scale-98 transition-all cursor-pointer group"
+            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4 rounded-2xl bg-ui-button text-white font-bold text-sm border border-white/20 shadow-md hover:scale-[1.03] active:scale-98 transition-all cursor-pointer group"
           >
             <ArrowSquareOutIcon size={16} weight="bold" />
             <span>Live Demo</span>
@@ -74,7 +74,7 @@ export const ProjectCard = ({
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4.5 rounded-2xl bg-ui-glass/50 text-ui-text font-bold text-sm md:text-xs border border-ui-inner shadow-md  hover:text-white hover:border-transparent hover:scale-[1.03] active:scale-98 transition-all cursor-pointer"
+            className="flex-1 flex items-center justify-center gap-2 py-3 md:py-4.5 rounded-2xl bg-ui-inner/50 text-ui-text font-bold text-sm md:text-xs border border-ui-inner shadow-md hover:bg-ui-inner hover:border-transparent hover:scale-[1.03] active:scale-98 transition-all cursor-pointer"
           >
             <GithubLogoIcon size={16} weight="fill" />
             <span>Repository</span>
@@ -83,7 +83,7 @@ export const ProjectCard = ({
       </div>
 
       <div className="flex-1 w-full flex flex-col gap-4 relative group">
-        <div className="w-full h-65 sm:h-118 bg-white rounded-xl border border-ui-inner overflow-hidden relative shadow-inner flex items-center justify-center group/canvas transition-colors duration-300">
+        <div className="w-full h-65 md:h-100 overflow-hidden relative flex items-center justify-center group/canvas transition-colors duration-300">
           <button
             onClick={() => setIsZoomed(true)}
             className="w-full h-full p-4 flex items-center justify-center relative group/img focus:outline-none cursor-zoom-in overflow-hidden"

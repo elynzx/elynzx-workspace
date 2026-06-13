@@ -1,4 +1,4 @@
-import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
+import { CaretLeftIcon, CaretRightIcon, DownloadSimpleIcon } from "@phosphor-icons/react";
 import { ABOUT_DATA } from "../../../data/aboutData";
 import { useAvatarCarousel } from "../hooks/useAvatarCarousel";
 
@@ -11,12 +11,11 @@ export const Avatar = () => {
     scanProgress,
     handleNext,
     handlePrev,
-    hasMultipleSlides
+    hasMultipleSlides,
   } = useAvatarCarousel(slides);
 
   return (
     <div className="relative group/avatar select-none overflow-visible w-76 h-85 bg-ui-glass/10 border border-ui-accent/20 backdrop-blur-2xl rounded-2xl shadow-[0_0_40px_rgba(192,38,211,0.12)] animate-in zoom-in-95 duration-300 transition-all">
-      
       <div className="absolute inset-0 opacity-15 bg-[linear-gradient(var(--ui-accent)_1px,transparent_1px),linear-gradient(90deg,var(--ui-accent)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none rounded-2xl" />
 
       <div className="absolute top-4 left-4 w-3 h-3 border-t-2 border-l-2 border-ui-accent z-20" />
@@ -25,7 +24,6 @@ export const Avatar = () => {
       <div className="absolute bottom-4 right-4 w-3 h-3 border-b-2 border-r-2 border-ui-accent z-20" />
 
       <div className="w-full h-full overflow-hidden relative z-10 group/canvas flex items-center justify-center rounded-2xl bg-black/30">
-
         {hasMultipleSlides && (
           <>
             <button
@@ -71,8 +69,21 @@ export const Avatar = () => {
           <span className="truncate max-w-[120px] uppercase text-ui-accent text-left">
             {activeSlide.badge}
           </span>
-          <span className="font-mono text-ui-accent/90 min-w-12">SCAN {scanProgress}%</span>
+          <span className="font-mono text-ui-accent/90 min-w-12">
+            SCAN {scanProgress}%
+          </span>
         </div>
+      </div>
+      <div className="flex items-center justify-center gap-2 text-[12px] text-ui-text/70 tracking-widest uppercase select-none animate-pulse transition-colors duration-300 mt-5">
+        <a
+          href="/Evelyn_Pascual_Resume.pdf"
+          download="Evelyn_Pascual_Resume.pdf"
+          className="w-full text-white font-bold mt-4 md:mt-0 flex items-center justify-center gap-1.5  active:scale-98 hover:scale-[1.04] transition-all cursor-pointer"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <DownloadSimpleIcon size={16} weight="bold" />
+          Download_Resume
+        </a>
       </div>
     </div>
   );
