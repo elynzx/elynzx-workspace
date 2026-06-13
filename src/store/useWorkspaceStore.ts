@@ -3,7 +3,7 @@ import { create } from "zustand";
 export type AppName =
   | "IdCard"
   | "Portfolio"
-  | "Music"
+  | "MusicPlayer"
   | "Tasks";
 
 export type ThemeMode = "dark" | "light";
@@ -22,7 +22,7 @@ export const useWorkspaceStore = create<WorkspaceState>((set) => ({
   isAppOpen: {
     IdCard: true,
     Portfolio: true,
-    Music: false,
+    MusicPlayer: false,
     Tasks: false,
   },
   activeApp: "IdCard",
