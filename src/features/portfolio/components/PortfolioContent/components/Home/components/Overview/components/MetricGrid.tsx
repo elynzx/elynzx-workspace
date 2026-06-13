@@ -18,10 +18,10 @@ const METRICS_DATA: MetricItem[] = [
   {
     id: "01",
     theme: "pink",
-    icon: <CompassIcon size={17} weight="bold" />,
-    category: "methodology",
-    title: "End-to-End Development",
-    desc: "SDLC planning & modular full-stack architecture.",
+    icon: <CodeIcon size={17} weight="bold" />,
+    category: "interests",
+    title: "Full-Stack Development",
+    desc: "Building with React, Spring Boot & Python.",
   },
   {
     id: "02",
@@ -34,10 +34,10 @@ const METRICS_DATA: MetricItem[] = [
   {
     id: "03",
     theme: "pink",
-    icon: <CodeIcon size={17} weight="bold" />,
+    icon: <CompassIcon size={17} weight="bold" />,
     category: "community",
     title: "IEEE WIE Volunteer",
-    desc: "Fostering STEM & collaborative teamwork.",
+    desc: "Facilitating STEM school workshops for girls.",
   },
   {
     id: "04",
@@ -45,7 +45,7 @@ const METRICS_DATA: MetricItem[] = [
     icon: <GlobeHemisphereWestIcon size={17} weight="bold" />,
     category: "language",
     title: "English B2 Certified",
-    desc: "Global workspace ready.",
+    desc: "TOEIC Certified • Professional working proficiency.",
   },
 ];
 
@@ -65,7 +65,7 @@ export const MetricGrid = () => {
                 className={`shrink-0 transition-all duration-300 group-hover/tile:scale-110 filter ${
                   isPink
                     ? "text-ui-accent group-hover/tile:drop-shadow-[0_0_6px_rgba(244,63,94,0.6)]"
-                    : "text-sky-300 group-hover/tile:drop-shadow-[0_0_6px_rgba(56,189,248,0.6)]"
+                    : "text-ui-sky group-hover/tile:drop-shadow-[0_0_6px_rgba(56,189,248,0.6)]"
                 }`}
               >
                 {tile.icon}
@@ -76,12 +76,12 @@ export const MetricGrid = () => {
                   className={`text-xs md:text-sm font-bold text-ui-text transition-colors duration-200 tracking-wide truncate ${
                     isPink
                       ? "group-hover/tile:text-ui-accent"
-                      : "group-hover/tile:text-sky-200"
+                      : "group-hover/tile:text-ui-sky"
                   }`}
                 >
                   {tile.title}
                 </span>
-                <p className="text-[11px] md:text-[13px] text-ui-text/60 font-medium truncate">
+                <p className="text-[11px] md:text-[13px] text-ui-text/80 font-medium truncate">
                   {tile.desc}
                 </p>
               </div>
@@ -89,12 +89,11 @@ export const MetricGrid = () => {
 
             <div
               className={`
-                font-code text-[10px] font-black tracking-widest uppercase md:px-3.5 md:py-1.5 py-1 rounded-lg shrink-0 select-none ml-8 md:ml-0
-                md:bg-ui-glass/50 md:border border-ui-border shadow-xs transition-colors duration-200
+                font-code text-[10px] font-black tracking-widest uppercase md:px-3.5 md:py-1.5 py-1 rounded-lg shrink-0 select-none ml-8 md:ml-0 md:bg-ui-glass/50 md:border border-ui-border shadow-xs transition-colors duration-200
                 ${
                   isPink
                     ? "text-ui-accent group-hover/tile:bg-pink-500/20 group-hover/tile:border-pink-400/30"
-                    : "text-sky-300 group-hover/tile:bg-sky-500/20 group-hover/tile:border-sky-400/30"
+                    : "text-ui-sky group-hover/tile:bg-sky-500/20 group-hover/tile:border-sky-400/30"
                 }
               `}
             >

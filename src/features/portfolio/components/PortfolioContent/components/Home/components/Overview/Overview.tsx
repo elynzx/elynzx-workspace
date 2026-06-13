@@ -7,7 +7,7 @@ export const Overview = () => {
 
   return (
     <div className="flex flex-col h-full gap-5 md:gap-3">
-      <div className="flex flex-row gap-3 md:gap-4 w-full mt-4 md:mt-0 md:mb-4 items-center justify-center">
+      <div className="flex flex-row gap-3 md:gap-4 w-full mt-4 md:mb-4 items-center justify-center">
         <img
           src={images.hi}
           alt="Profile illustration"

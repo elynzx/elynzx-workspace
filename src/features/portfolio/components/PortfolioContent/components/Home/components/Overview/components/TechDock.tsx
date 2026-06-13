@@ -37,7 +37,7 @@ export const TechDock = () => {
 
           <div
             className="
-            text-ui-text hover:text-ui-accent transition-all duration-300 
+            text-text hover:text-ui-accent transition-all duration-300 
             hover:scale-125 filter hover:drop-shadow-[0_0_8px_rgba(244,63,94,0.5)] 
             text-xl relative z-10 cursor-pointer
           "
