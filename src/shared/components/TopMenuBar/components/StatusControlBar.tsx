@@ -15,20 +15,16 @@ interface Props {
   time: string;
 }
 
-export const StatusControlBar = ({
-  onToggleTheme,
-  themeMode,
-  time,
-}: Props) => {
+export const StatusControlBar = ({ onToggleTheme, themeMode, time }: Props) => {
   return (
-    <div className="flex items-center justify-center rounded-xl text-ui-text px-8 h-9 backdrop-blur-xs bg-ui-inner/40 gap-6">
+    <div className="flex items-center justify-center rounded-xl text-white px-6 h-9 backdrop-blur-xs bg-ui-inner/40 gap-6">
       <div
         onClick={onToggleTheme}
         className="cursor-pointer active:scale-95 transition-all"
       >
         {themeMode === "light" ? (
           <MoonIcon
-            size={18} 
+            size={18}
             weight="bold"
             className="text-ui-text hover:text-pink-400"
           />
@@ -41,9 +37,7 @@ export const StatusControlBar = ({
         )}
       </div>
       <div className="md:hidden flex gap-4">
-        <span className="flex  opacity-40 font-light select-none">
-          |
-        </span>
+        <span className="flex  opacity-40 font-light select-none">|</span>
         <span className="tracking-wider text-ui-text">{time}</span>
       </div>
 
