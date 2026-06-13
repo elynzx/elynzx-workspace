@@ -13,9 +13,9 @@ import Stars from "../../assets/stickers/loading.png";
 import { motion } from "motion/react";
 
 const idData = {
-  season: "SEMESTER 08",
+  season: "CYCLE 08",
   greeting: "STATUS : AVAILABLE",
-  role: "Software Developer & UI Designer",
+  role: "Systems Eng. Student",
   photo: ProfilePhoto,
   socials: {
     github: "https://github.com",
@@ -23,8 +23,8 @@ const idData = {
   },
   details: [
     { label: "Identity", value: "Evelyn Pascual" },
-    { label: "Tech Stack", value: "React • Java • Python" },
-    { label: "Major", value: "Information Systems Engineering", hideOnMobile: true },
+    { label: "Focus", value: "Full-Stack Development", hideOnMobile: false },
+    { label: "Location", value: "Lima, Perú" },
     { label: "Next Step", value: "Seeking Internship", isOnline: true },
   ],
 };
@@ -36,7 +36,7 @@ export const IdCard = () => {
   const zIndex = activeApp === "IdCard" ? "z-50" : "z-10";
   const [isFirstFrame, setIsFirstFrame] = useState(true);
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-  const initialX = isMobile ? 15 : window.innerWidth * 0.63;
+  const initialX = isMobile ? 15 : window.innerWidth * 0.64;
   const initialY = isMobile ? 185 : window.innerHeight * 0.15;
 
   useEffect(() => {
@@ -59,10 +59,10 @@ export const IdCard = () => {
         boxShadow: "0px 30px 70px rgba(244,63,94,0.3)",
       }}
       onPointerDown={() => focusApp("IdCard")}
-      className={`${zIndex} cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-95 md:max-w-lg p-5 md:p-6 rounded-2xl md:rounded-3xl border-2 border-pink-200 flex flex-col pointer-events-auto select-none active:cursor-grabbing rotate-3`}
+      className={`${zIndex} cursor-crosshair absolute text-gray-600 bg-white w-[92%] sm:w-[70%] max-w-95 md:max-w-lg p-5 md:p-6 rounded-2xl md:rounded-3xl border-2 border-ui-border shadow-md flex flex-col pointer-events-auto select-none active:cursor-grabbing rotate-3`}
     >
       <div className="flex flex-col items-center w-full gap-1.5 mb-2.5 md:mb-4">
-        <div className="w-10 h-2 md:h-4 md:w-14 bg-[#9b6d8a] rounded-full border border-pink-300 shadow-inner" />
+        <div className="w-10 h-2 md:h-4 md:w-14 bg-ui-card rounded-full border border-ui-border shadow-inner" />
         <div className="text-pink-400 font-code flex justify-between items-center w-full uppercase font-black text-[11px] tracking-widest py-2">
           <div className="flex items-center gap-2 md:text-sm ">
             <StarIcon
@@ -161,7 +161,7 @@ export const IdCard = () => {
       <img
         src={isFirstFrame ? Bunny01 : Bunny02}
         alt="Animated bunny"
-        className="absolute w-30 h-auto -top-22 right-14 md:-top-20 md:w-30 md:right-25 md:h-auto z-50 pointer-events-none "
+        className="absolute w-30 h-auto -top-22 right-14 md:-top-20 md:w-30 md:right-25 md:h-auto z-50 pointer-events-none drop-shadow-sm"
       />
     </motion.div>
   );
