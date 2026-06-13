@@ -36,8 +36,11 @@ export function useBottomBar() {
       id: "music",
       label: "Music Player",
       Icon: MusicNotesIcon,
-      isActive: isAppOpen.Music,
-      onToggle: () => toggleApp("Music"),
+      isActive: isAppOpen.MusicPlayer,
+      onToggle: () => {
+        toggleApp("MusicPlayer");
+        focusApp("MusicPlayer");
+      },
     },
     {
       id: "tasks",
