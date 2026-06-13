@@ -1,33 +1,31 @@
 import { useState, useRef, useEffect, type RefObject } from "react";
 
-export type DropdownType = "contact" | "info" | null;
-
 interface Props {
-  activeDropdown: DropdownType;
+  isOpen: boolean;
   menuRef: RefObject<HTMLDivElement | null>;
-  toggleDropdown: (type: DropdownType) => void;
+  toggleDropdown: () => void;
   closeDropdown: () => void;
 }
 
-export const useDropdown = (): Props => {
-  const [activeDropdown, setActiveDropdown] = useState<DropdownType>(null);
+export const useInfoModal = (): Props => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
+        setIsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  const toggleDropdown = (type: DropdownType) => {
-    setActiveDropdown((prev) => (prev === type ? null : type));
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
   };
 
-  const closeDropdown = () => setActiveDropdown(null);
+  const closeDropdown = () => setIsOpen(false);
 
-  return { activeDropdown, menuRef, toggleDropdown, closeDropdown };
+  return { isOpen, menuRef, toggleDropdown, closeDropdown };
 };
