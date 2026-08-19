@@ -12,7 +12,7 @@ interface SidebarItem {
   Icon: React.ElementType;
 }
 
-export const NAVIGATION: SidebarItem[] = [
+const NAVIGATION: SidebarItem[] = [
   { id: "home", label: "Home", Icon: HeartIcon },
   { id: "skills", label: "Skills", Icon: CodeIcon },
   { id: "projects", label: "Projects", Icon: BriefcaseIcon },

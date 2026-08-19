@@ -7,7 +7,6 @@ import {
   PauseIcon,
   SkipBackIcon,
   SkipForwardIcon,
-  ListBulletsIcon,
   HeadsetIcon,
   XIcon,
   PlaylistIcon,
