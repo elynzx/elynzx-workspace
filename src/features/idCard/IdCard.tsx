@@ -1,8 +1,5 @@
-import {
-  StarIcon,
-  SparkleIcon,
-} from "@phosphor-icons/react";
-import ProfilePhoto from "../../assets/ProfilePhoto/Profile_02.png";
+import { StarIcon, SparkleIcon } from "@phosphor-icons/react";
+import ProfilePhoto from "../../assets/ProfilePhoto/Id_photo.jpeg";
 import PaperClip from "../../assets/stickers/paperClip.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useWorkspaceStore } from "../../store/useWorkspaceStore";
@@ -10,6 +7,8 @@ import { useEffect, useState } from "react";
 import Bunny01 from "../../assets/stickers/bunny01.svg";
 import Bunny02 from "../../assets/stickers/bunny02.svg";
 import Stars from "../../assets/stickers/loading.png";
+import MiniStar from "../../assets/stickers/mini_star.png";
+import Happy from "../../assets/stickers/happy_icon.png";
 import { motion } from "motion/react";
 
 const idData = {
@@ -18,8 +17,8 @@ const idData = {
   role: "Systems Eng. Student",
   photo: ProfilePhoto,
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/elynzx",
+    linkedin: "https://www.linkedin.com/in/evelynpascualc/",
   },
   details: [
     { label: "Identity", value: "Evelyn Pascual" },
@@ -84,19 +83,29 @@ export const IdCard = () => {
             <img
               src={idData.photo}
               alt="Profile Avatar"
-              className="w-full h-full object-cover contrast-105 brightness-102"
+              className="w-full h-full object-cover contrast-105 brightness-102 scale-x-[-1]"
             />
           </div>
 
           <img
             src={PaperClip}
             alt=""
-            className="absolute -top-6 -right-4 md:-top-6 md:-right-6 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
+            className="absolute -top-6 -right-4 md:-top-8 md:-right-8 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
           />
           <img
             src={Stars}
             alt="Animated star"
-            className="absolute -top-6 -right-4 md:top-55 md:-left-6 rotate-30 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
+            className="absolute -top-6 -right-4 md:top-55 md:-right-6 rotate-30 w-14 md:w-20 pointer-events-none drop-shadow-md select-none jello-horizontal"
+          />
+          <img
+            src={Happy}
+            alt="Animated star"
+            className="absolute -top-6 -right-4 md:top-50 md:left-1 -rotate-30 w-14 md:w-18 pointer-events-none drop-shadow-lg select-none jello-horizontal"
+          />
+          <img
+            src={MiniStar}
+            alt="Animated star"
+            className="absolute -top-6 -right-4 md:top-18 md:-left-0.5 -rotate-30 w-14 md:w-10 pointer-events-none drop-shadow-lg select-none jello-horizontal"
           />
         </div>
 
