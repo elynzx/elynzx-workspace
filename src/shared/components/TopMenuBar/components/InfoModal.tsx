@@ -44,7 +44,6 @@ export const InfoModal = ({
 
       {isOpen && (
         <div className="absolute top-15 left-0 w-64 p-4 rounded-2xl flex flex-col gap-3.5 z-50 pointer-events-auto bg-ui-inner/80 backdrop-blur-2xl ring-1 ring-ui-border shadow-sm">
-          
           <div className="absolute inset-0 bg-[linear-gradient(var(--ui-text)_50%,transparent_50%)] bg-size-[100%_4px] opacity-2 md:opacity- z-10 pointer-events-none light:hidden" />
 
           <div className="relative flex items-center gap-1.5 text-xs uppercase tracking-widest font-extrabold pb-1 border-b border-ui-border select-none text-ui-text z-10">
@@ -69,7 +68,7 @@ export const InfoModal = ({
 
           <div className="relative pt-1 z-10">
             <a
-              href="https://github.com"
+              href="https://github.com/elynzx/elynzx-workspace"
               target="_blank"
               rel="noreferrer"
               onClick={() => closeDropdown()}
