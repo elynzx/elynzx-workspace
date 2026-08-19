@@ -19,16 +19,6 @@ export const ABOUT_DATA = {
         badge: "Evelyn Pascual",
         caption: "Systems Engineering Intern canvas",
       },
-      /*       {
-        url: "RUTA",
-        badge: "IEEE WIE Volunteer",
-        caption: "Facilitating tech and STEM workshops for girls",
-      },
-      {
-        url: "RUTA",
-        badge: "Tech Networking",
-        caption: "Connecting with engineering professionals and mentors",
-      }, */
     ],
 
     images: {

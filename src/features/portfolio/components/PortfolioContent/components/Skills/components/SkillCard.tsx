@@ -1,4 +1,4 @@
-import { CaretDownIcon, CheckFatIcon, CheckIcon, SparkleIcon, StarIcon } from "@phosphor-icons/react";
+import { CheckFatIcon, StarIcon } from "@phosphor-icons/react";
 
 interface SkillCardProps {
   name: string;

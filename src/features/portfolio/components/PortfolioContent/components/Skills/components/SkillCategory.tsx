@@ -1,4 +1,4 @@
-import { CaretDownIcon, CircleIcon, FolderSimpleStarIcon } from "@phosphor-icons/react";
+import { CaretDownIcon, FolderSimpleStarIcon } from "@phosphor-icons/react";
 import { useState } from "react";
 import { SkillCard } from "./SkillCard";
 
