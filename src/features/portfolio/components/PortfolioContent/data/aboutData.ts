@@ -1,4 +1,4 @@
-import ProfilePhoto from "../../../../../assets/ProfilePhoto/Profile_02.png";
+import ProfilePhoto from "../../../../../assets/ProfilePhoto/ProfilePhoto2.jpg";
 import HiIcon from "../../../../../assets/stickers/hi.png";
 
 export const ABOUT_DATA = {
@@ -19,7 +19,7 @@ export const ABOUT_DATA = {
         badge: "Evelyn Pascual",
         caption: "Systems Engineering Intern canvas",
       },
-      {
+      /*       {
         url: "RUTA",
         badge: "IEEE WIE Volunteer",
         caption: "Facilitating tech and STEM workshops for girls",
@@ -28,7 +28,7 @@ export const ABOUT_DATA = {
         url: "RUTA",
         badge: "Tech Networking",
         caption: "Connecting with engineering professionals and mentors",
-      },
+      }, */
     ],
 
     images: {

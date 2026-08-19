@@ -21,7 +21,7 @@ export interface ProjectItem {
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
-  {
+/*   {
     id: "lumina",
     name: "Lumina Eventos",
     scope: "Full-Stack Architecture & Cloud Deployment",
@@ -49,15 +49,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
         imgUrl: luminaDb,
       },
     ],
-  },
+  }, */
   {
     id: "pawguard",
     name: "PawGuard",
     scope: "Persistent State Modeling",
     techTags: ["React 18", "TypeScript", "Supabase", "Zustand", "PostgreSQL"],
     desc: "A modern pet insurance web application customized for the Peruvian market. Implements a multi-step smart onboarding flow with Zustand persistent state tracking, interactive maps via React Leaflet, and automatic session token authentication using Supabase PostgreSQL RLS policies.",
-    liveUrl: "https://vercel.app",
-    githubUrl: "https://github.com",
+    liveUrl: "https://pawguard-pet-insurance.vercel.app/",
+    githubUrl: "https://github.com/elynzx/pawguard-pet-insurance",
     slides: [
       {
         label: "01 USER RESPONSIVE CANVAS",
