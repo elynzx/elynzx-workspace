@@ -22,10 +22,13 @@ export const MusicPlayer = () => {
   const activeApp = useWorkspaceStore((state) => state.activeApp);
   const focusApp = useWorkspaceStore((state) => state.focusApp);
   const toggleApp = useWorkspaceStore((state) => state.toggleApp);
-
-  const [isPlaylistVisible, setIsPlaylistVisible] = useState(true);
-  const dragControls = useDragControls();
   const isMobile = window.innerWidth < 768;
+
+  const initialX = isMobile ? 16 : window.innerWidth - 540;
+  const initialY = isMobile ? 16 : 12;
+
+  const [isPlaylistVisible, setIsPlaylistVisible] = useState(false);
+  const dragControls = useDragControls();
 
   const PLAYLIST_ID = "PLHGKmtxOFv7x7qL2n7nmYD-EbYGlkj5qq";
 
@@ -45,8 +48,9 @@ export const MusicPlayer = () => {
       dragListener={false}
       dragMomentum={false}
       dragControls={dragControls}
+      initial={{ x: initialX, y: initialY }}
       onMouseDown={() => focusApp("MusicPlayer")}
-      className={`${zIndex} absolute top-10 left-4 md:left-10 flex flex-col text-ui-text bg-ui-glass/30 backdrop-blur-xl border border-ui-border rounded-xl w-100 pointer-events-auto shadow-lg select-none `}
+      className={`${zIndex} absolute flex flex-col text-ui-text bg-ui-glass/30 backdrop-blur-xl border border-ui-border rounded-xl w-80 md:w-100 pointer-events-auto shadow-lg select-none `}
     >
       <div className="absolute invisible h-0 w-0 overflow-hidden pointer-events-none">
         <YouTube
@@ -60,12 +64,12 @@ export const MusicPlayer = () => {
       <img
         src={WingRight}
         alt="Wing Right"
-        className="absolute top-4 -right-16 w-16 z-53 pointer-events-none drop-shadow-lg select-none jello-vertical"
+        className="absolute top-4 -right-12 md:-right-16 w-12 md:w-16 z-53 pointer-events-none drop-shadow-lg select-none jello-vertical"
       />
       <img
         src={WingLeft}
         alt="Wing Left"
-        className="absolute top-4 -left-16 w-16 z-53 pointer-events-none drop-shadow-lg select-none jello-vertical"
+        className="absolute top-4 -left-12 md:-left-16 w-12 md:w-16 z-53 pointer-events-none drop-shadow-lg select-none jello-vertical"
       />
 
       <div
@@ -109,7 +113,7 @@ export const MusicPlayer = () => {
         </button>
       </div>
 
-      <div className="flex items-center h-16 justify-between p-3 gap-3 w-full bg-ui-glass/5 border-b border-ui-border/20 shrink-0 px-6">
+      <div className="flex items-center md:h-16 justify-between p-3 gap-3 w-full bg-ui-glass/5 border-b border-ui-border/20 shrink-0 px-6">
         <div className="flex items-center gap-2 min-w-0 flex-1">
           <div
             className={`bg-ui-inner/60 border border-ui-border/60 rounded-full overflow-hidden shrink-0 flex items-center justify-center transition-all duration-500 ${
@@ -119,11 +123,11 @@ export const MusicPlayer = () => {
             <img
               src={myAlbumCover}
               alt="Cover"
-              className="w-9 h-9 object-contain"
+              className="w-6 md:w-9 h-auto object-contain"
             />
           </div>
 
-          <div className="w-27 overflow-hidden whitespace-nowrap px-1">
+          <div className="w-20 md:w-27 overflow-hidden whitespace-nowrap px-1">
             <p
               className={`font-code text-[12px] font-bold text-ui-text/80 tracking-tight ${isPlaying ? "animate-marquee" : ""}`}
             >
