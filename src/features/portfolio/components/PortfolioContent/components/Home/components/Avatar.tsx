@@ -63,10 +63,10 @@ export const Avatar = () => {
           <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white/40" />
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
 
         <div className="absolute bottom-3 inset-x-4 z-20 flex justify-between items-center font-code text-[11px] text-white/90 tracking-wider font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,1)] p-4">
-          <span className="truncate max-w-[120px] uppercase text-ui-accent text-left">
+          <span className="truncate max-w-30 uppercase text-ui-accent text-left">
             {activeSlide.badge}
           </span>
           <span className="font-mono text-ui-accent/90 min-w-12">
